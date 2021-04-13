@@ -5,11 +5,12 @@ import Navigation from "../components/navigation";
 const Home = () => {
     return (
         <>
+        <p>Dette er Hovedsiden</p>
         <Header/>
         <Navigation/>
         <Footer/>
         </>
-    )
-    }
+    );
+};
 
 export default Home;

@@ -1,35 +1,35 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Home from "../pages/home";
-import Articles from "../pages/articles";
-import NoMatch from "../pages/NoMatch";
-import Article from '../pages/article';
-import Contact from '../pages/contact';
-import Galleri from '../pages/galleri';
+import Home from "../pages/home.js";
+import Articles from "../pages/articles.js";
+import NoMatch from "../pages/NoMatch.js";
+import Article from '../pages/article.js';
+import Contact from '../pages/contact.js';
+import Galleri from '../pages/galleri.js';
 
-const Routes = () => {
+const Routes = () => (
     <Router>
         <Switch>
-            <Route exact path="/hjem">
-                <Home/>
+            <Route exact path="/">
+                <Home />
             </Route>
             <Route exact path="/artikler">
-                <Articles/>
+                <Articles />
             </Route>
             <Route exact path="/artikkel">
-                <Article/>
+                <Article />
             </Route>
             <Route exact path="/kontakt">
-                <Contact/>
+                <Contact />
             </Route>
             <Route exact path="/galleri">
-                <Galleri/>
+                <Galleri />
             </Route>
             <Route path="*">
-                <NoMatch/>
+                <NoMatch />
             </Route>
         </Switch>
     </Router>
-}
+);
 
 export default Routes;
 

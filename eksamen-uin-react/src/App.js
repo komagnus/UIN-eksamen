@@ -1,6 +1,9 @@
 import Routes from "./routes/Routes.js";
 
-const App = () => <Routes />
-
+const App = () => (
+    <>
+    <Routes />
+    </>
+);
 
 export default App;
