@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from "../pages/home";
 import Articles from "../pages/articles";
 import NoMatch from "../pages/NoMatch";
@@ -32,3 +32,4 @@ const Routes = () => {
 }
 
 export default Routes;
+
