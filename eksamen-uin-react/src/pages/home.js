@@ -1,14 +1,24 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
-import Navigation from "../components/navigation";
+import { AllArticles, AllContent, ArticleContent, Main, MainContent, RelevantArticle } from "../styles/Style";
+
+
 
 const Home = () => {
     return (
         <>
-        <p>Dette er Hovedsiden</p>
-        <Header/>
-        <Navigation/>
-        <Footer/>
+        <Main>
+            <AllContent>
+                <MainContent>
+                    <Header/>
+                    <ArticleContent>
+                        <RelevantArticle>Her skal den relevante artikkelen ligge</RelevantArticle>
+                        <AllArticles>Her skal alle artikler ligge</AllArticles>
+                    </ArticleContent>
+                    <Footer/>
+                </MainContent>
+            </AllContent>
+        </Main>
         </>
     );
 };

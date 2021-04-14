@@ -1,6 +1,8 @@
+import { FooterContent } from "../styles/Style";
+
 const Footer = () => {
     return (
-        <h1>Fot</h1>
+        <FooterContent>Fot</FooterContent>
     );
 }
 

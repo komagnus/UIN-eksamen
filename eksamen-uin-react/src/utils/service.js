@@ -1,17 +1,14 @@
 import client from './client.js'
 
-const eventFields = `
+const articleFields = `
+    image,
+    header,
+    preview,
+    author
 `;
 
-export const getEvents = async () => {
-    const data = await client.fetch(`*[_type == "event"]{${eventFields}}`);
+const getArticles = async () => {
+    const data = await client.fetch(`*[_type == "articles"]{${articleFields}}`);
     return data;
 }
-
-export const getEvent = async (slug) => {
-    const data = await client.fetch(
-        `*[_type == "event" && slug.current == $slug]{${eventFields}}`,
-        { slug }
-        );
-    return data;
-}
+export default getArticles;

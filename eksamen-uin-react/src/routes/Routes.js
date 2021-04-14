@@ -5,6 +5,8 @@ import NoMatch from "../pages/NoMatch.js";
 import Article from '../pages/article.js';
 import Contact from '../pages/contact.js';
 import Galleri from '../pages/galleri.js';
+import About from '../pages/about.js';
+
 
 const Routes = () => (
     <Router>
@@ -20,6 +22,9 @@ const Routes = () => (
             </Route>
             <Route exact path="/kontakt">
                 <Contact />
+            </Route>
+            <Route exact path="/OmOss">
+                <About />
             </Route>
             <Route exact path="/galleri">
                 <Galleri />
