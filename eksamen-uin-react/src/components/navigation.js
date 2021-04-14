@@ -20,6 +20,6 @@ const Navigation = () => {
            </NavContent>
         </NavStyle>
     );
-}
+};
 
 export default Navigation;
