@@ -17,8 +17,8 @@ export const MainContent = styled.section`
     background-color: #222831;
 `;
 export const FooterContent = styled.footer`
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
     color: #eeeeee;
     background-color: #393e46;
 `;
