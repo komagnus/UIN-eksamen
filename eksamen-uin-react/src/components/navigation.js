@@ -1,5 +1,6 @@
+import React from "react" 
 import { NavLink } from "react-router-dom"
-import { NavContent, NavContentItem, NavStyle } from "../styles/Style";
+import { NavContent, NavContentItem, NavStyle } from "../styles/Style.js";
 
 const Navigation = () => {
     return (
@@ -12,7 +13,7 @@ const Navigation = () => {
                     <NavLink to="/kontakt" activeClassName="active">Kontakt oss</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
-                    <NavLink to="/OmOss" activeClassName="active">Om oss</NavLink> 
+                    <NavLink to="/omOss" activeClassName="active">Om oss</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
                     <NavLink to="/galleri" activeClassName="active">Galleri</NavLink> 
@@ -20,6 +21,6 @@ const Navigation = () => {
            </NavContent>
         </NavStyle>
     );
-}
+};
 
 export default Navigation;
