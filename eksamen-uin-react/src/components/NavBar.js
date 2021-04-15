@@ -1,21 +1,22 @@
+import React from "react" 
 import { NavLink } from "react-router-dom"
-import { NavContent, NavContentItem, NavStyle } from "../styles/Style";
+import { NavContent, NavContentItem, NavStyle } from "./styles/Style.js";
 
 const Navigation = () => {
     return (
         <NavStyle>
             <NavContent>
                 <NavContentItem>
-                    <NavLink to="/artikler" activeClassName="active">Artikler</NavLink> 
+                    <NavLink to="/" activeClassName="active">Artikler</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
-                    <NavLink to="/kontakt" activeClassName="active">Kontakt oss</NavLink> 
+                    <NavLink to="/contact" activeClassName="active">Kontakt oss</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
-                    <NavLink to="/OmOss" activeClassName="active">Om oss</NavLink> 
+                    <NavLink to="/about" activeClassName="active">Om oss</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
-                    <NavLink to="/galleri" activeClassName="active">Galleri</NavLink> 
+                    <NavLink to="/gallery" activeClassName="active">Galleri</NavLink> 
                 </NavContentItem>        
            </NavContent>
         </NavStyle>
