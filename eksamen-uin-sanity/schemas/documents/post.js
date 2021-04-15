@@ -1,6 +1,6 @@
-export default post = {
-    name: 'publisering',
-    title: 'Publisering',
+export default {
+    name: 'post',
+    title: 'Post',
     type: 'document',
     fields: [
       {

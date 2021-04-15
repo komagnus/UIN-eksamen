@@ -1,6 +1,6 @@
-export default forfatter = {
-    name: 'forfatter',
-    title: 'Forfatter',
+export default {
+    name: 'author',
+    title: 'Author',
     type: 'document',
     fields: [
       {

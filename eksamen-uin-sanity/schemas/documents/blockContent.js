@@ -8,7 +8,7 @@
  *    type: 'blockContent'
  *  }
  */
- export default blockContent = {
+ export default {
     title: 'BlockContent',
     name: 'blockContent',
     type: 'array',
