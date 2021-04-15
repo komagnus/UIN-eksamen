@@ -20,14 +20,31 @@ export const FooterContent = styled.footer`
     grid-row-start: 5;
     grid-row-end: 6;
     color: #eeeeee;
-    background-color: #393e46;
+    background-color: #444b55;
+`;
+export const FooterWrapper = styled.section`
+    display: flex;
+    justify-content: center;
+    justify-content:space-around;
+`;
+export const FooterChild = styled.section`
+    width:33%;
+    justify-content: center;
+    justify-content:space-around;
+    border-right: 2px solid #fed049;
+    & > li {
+        display:flex;
+        justify-content: center;
+    }
+    &:nth-child(3) {
+        border: none;
+    }
 `;
 export const HeaderWrapper = styled.div`
     background-color: #eeeeee;
     grid-row-start: 1;
     grid-row-end: 2;
     display: flex;
-
     &:first-child {
         padding-left: 2rem;
     }
