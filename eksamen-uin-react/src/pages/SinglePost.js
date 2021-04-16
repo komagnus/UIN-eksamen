@@ -68,13 +68,13 @@ useEffect(() => {
                         
                         
                         <div class="rc_nav" > 
-                        <a href="" title="Alle">Alle</a>
-                        <a href="" title="Nyheter">Nyheter</a>     
-                        <a href="" title="Tutorials">Tutorials</a>
-                        <a href="" title="Tips og tricks">Tips og tricks</a>
-                        <a href="" title="Helse">Helse</a>
-                        <a href="" title="Profflag">Profflag</a>
-                        <a href="" title="Inspirasjon">Inspirasjon</a>
+                        <a href="#" title="Alle">Alle</a>
+                        <a href="#" title="Nyheter">Nyheter</a>     
+                        <a href="#" title="Tutorials">Tutorials</a>
+                        <a href="#" title="Tips og tricks">Tips og tricks</a>
+                        <a href="#" title="Helse">Helse</a>
+                        <a href="#" title="Profflag">Profflag</a>
+                        <a href="#" title="Inspirasjon">Inspirasjon</a>
 
                         </div>
                         </nav>
