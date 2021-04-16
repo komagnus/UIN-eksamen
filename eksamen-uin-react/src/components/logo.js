@@ -1,4 +1,4 @@
-import { LogoStyle } from "../styles/Style"
+import { LogoStyle } from "../styles/LogoStyle"
 
 export const Logo = () => {
     return (
