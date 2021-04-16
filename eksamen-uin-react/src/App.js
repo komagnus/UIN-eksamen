@@ -1,9 +1,13 @@
-import Routes from "./routes/Routes.js";
+import Routes from "./routes/Routes";
 
-const App = () => (
+
+
+function App() {
+  return (
     <>
     <Routes />
     </>
-);
+  );
+}
 
 export default App;

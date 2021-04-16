@@ -1,13 +1,7 @@
-import sanityClient from '@sanity/client';
+import sanityClient from '@sanity/client'
 
-const options = {
-    projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
-    dataset: process.env.REACT_APP_SANITY_DATASET_NAME,
-};
+export default sanityClient({
+    projectId: "kggawxgp",
+    dataset: "production"
 
-const client = sanityClient({
-    ...options,
-    useCdn: process.env.NODE_ENV === 'production',
-});
-
-export default client;
+})
