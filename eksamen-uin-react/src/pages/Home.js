@@ -1,6 +1,7 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
-import { AllArticles, AllContent, ArticleContent, Main, MainContent, RelevantArticle } from "../styles/Style";
+import { Main, MainContent, AllContent } from "../styles/Style";
+import { AllArticles, RelevantArticle, ArticleContent } from "../styles/HomeStyle";
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import sanityClient from "../utils/client.js";
