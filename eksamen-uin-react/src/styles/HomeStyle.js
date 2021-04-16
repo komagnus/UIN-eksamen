@@ -21,4 +21,12 @@ export const AllArticles = styled.article`
     grid-row-end: 3;
     display: flex;
     padding: 20px;
+    flex-direction: 'row';
+    flex-wrap: wrap;
+    justify-content: space-between;
+    ${props => props.changeView ? 'row' : 'column'}
+`;
+
+export const PreviewArticle = styled.article`
+    padding: 10px;
 `;
