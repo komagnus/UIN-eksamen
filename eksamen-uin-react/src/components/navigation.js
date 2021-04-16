@@ -7,9 +7,6 @@ const Navigation = () => {
         <NavStyle>
             <NavContent>
                 <NavContentItem>
-                    <NavLink to="/artikler" activeClassName="active">Artikler</NavLink> 
-                </NavContentItem>
-                <NavContentItem>
                     <NavLink to="/kontakt" activeClassName="active">Kontakt oss</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
