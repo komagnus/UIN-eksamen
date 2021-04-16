@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HeaderWrapper } from "../styles/Style";
+import { HeaderWrapper } from "../styles/HeaderStyle";
 import { Logo } from "./logo";
 import '../styles/Style.css';
 import Navigation from "./navigation";
