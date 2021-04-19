@@ -1,23 +1,42 @@
-import React from "react" 
+import React, { useEffect, useState } from "react";
+import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
 import { NavContent, NavContentItem, NavStyle } from "../styles/NavStyle";
 
-const Navigation = () => {
+export default function Navigation() {
+    const [navigationListData, setNavigationList] = useState(null) ;
+
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == "navigationList"]{
+        navigationname1,
+        navigationname2,
+        navigationname3,
+        }`).then((data) => setNavigationList(data))
+        .catch(console.error);
+    }, []);
+
+
+
+
     return (
+
         <NavStyle>
+        {navigationListData && navigationListData.map((navigationList, index) => (                  
+
             <NavContent>
                 <NavContentItem>
-                    <NavLink to="/kontakt" activeClassName="active">Kontakt oss</NavLink> 
+                    <NavLink to="/omOss" activeClassName="active">{navigationList.navigationname1}</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
-                    <NavLink to="/omOss" activeClassName="active">Om oss</NavLink> 
+                    <NavLink to="/kontakt" activeClassName="active">{navigationList.navigationname2}</NavLink> 
                 </NavContentItem>
                 <NavContentItem>
-                    <NavLink to="/galleri" activeClassName="active">Galleri</NavLink> 
-                </NavContentItem>        
+                    <NavLink to="/galleri" activeClassName="active">{navigationList.navigationname3}</NavLink> 
+                </NavContentItem> 
+                       
            </NavContent>
+           ))}
         </NavStyle>
     );
 };
 
-export default Navigation;
