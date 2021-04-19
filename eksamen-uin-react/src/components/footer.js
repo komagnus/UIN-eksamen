@@ -1,31 +1,88 @@
+import React, { useEffect, useState } from "react";
+import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
 import { FooterContent,FooterWrapper,FooterChild } from "../styles/FooterStyle";
-const Footer = () => {
+
+export default function Footer() {
+    const [footeransattData, setFooteransatt] = useState(null) ;
+    const [footerkontaktData, setFooterkontakt] = useState(null) ;
+    const [footernavigasjonData, setFooternavigasjon] = useState(null) ;
+
+
+
+
+
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == "footeransatt"]{
+        ansatt,
+        rolle,
+        }`
+        )
+        .then((data) => setFooteransatt(data))
+        .catch(console.error);
+    }, []);
+
+
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == "footerkontakt"]{
+        adresse,
+        tipstelefon,
+        email,
+        }`
+        )
+        .then((data) => setFooterkontakt(data))
+        .catch(console.error);
+    }, []);
+
+
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == "footernavigasjon"]{
+        navigasjon1,
+        navigasjon2,
+        navigasjon3,
+        navigasjon4,
+        navigasjon5,
+        }`
+        )
+        .then((data) => setFooternavigasjon(data))
+        .catch(console.error);
+    }, []);
+
+
     return (
+        
         <FooterContent>
-            <FooterWrapper>
-            <FooterChild>
-                <li> Redaktør: <strong>Trude Sjef</strong> </li>
-                <li>Leder helse:<strong>Simon Helse</strong></li>
-                <li>Leder annonse:<strong>Trine Selger</strong></li>
-                <li>Leder markedsføring: <strong>Ask Marked</strong></li>
-                <li>Leder design: <strong>Ali Design</strong></li>
-            </FooterChild>
-            <FooterChild>
-                <li>Adresse: B R A veien 4, 1757 Halden</li>
-                <li>Tipstelefon: 911 911 911</li>
-                <li>E-post: kontakt@game.uin</li>
-            </FooterChild>
-            <FooterChild>
-            <li><NavLink to="" activeClassName="active">Hjem</NavLink> </li>
-            <li><NavLink to="/artikler" activeClassName="active">Artikler</NavLink> </li>
-            <li><NavLink to="/kontakt" activeClassName="active">Kontakt oss</NavLink> </li>
-            <li><NavLink to="/OmOss" activeClassName="active">Om oss</NavLink> </li>
-            <li><NavLink to="/galleri" activeClassName="active">Galleri</NavLink></li>
-            </FooterChild>
-            </FooterWrapper>
+        <FooterWrapper>
+        {footeransattData && footeransattData.map((footeransatt, index) => (     
+        <FooterChild>
+        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
+        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
+        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
+        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
+        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
+
+        </FooterChild>
+        ))}
+
+        {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
+        <FooterChild>
+        <li>{footerkontakt.adresse} </li>
+        <li>{footerkontakt.tipstelefon}</li>
+        <li>{footerkontakt.email}</li>
+        </FooterChild>
+        ))}
+
+        
+        {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
+        <FooterChild>
+        <li><NavLink to="" activeClassName="active">{footernavigasjon.navigasjon1}</NavLink> </li>
+        <li><NavLink to="/kontakt" activeClassName="active">{footernavigasjon.navigasjon2}</NavLink> </li>
+        <li><NavLink to="/OmOss" activeClassName="active">{footernavigasjon.navigasjon3}</NavLink> </li>
+        <li><NavLink to="/galleri" activeClassName="active">{footernavigasjon.navigasjon4}</NavLink></li>
+        </FooterChild>
+        ))}
+
+        </FooterWrapper>
         </FooterContent>
     );
 }
-
-export default Footer;

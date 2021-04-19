@@ -1,7 +1,7 @@
 export default {
 
   title: 'Footer_ansatt',
-  name: 'footer',
+  name: 'footeransatt',
   type: 'document',
 
   fields: [

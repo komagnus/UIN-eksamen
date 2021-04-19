@@ -1,7 +1,7 @@
 export default {
 
     title: 'Footer_kontakt',
-    name: 'Footer_kontakt',
+    name: 'footerkontakt',
     type: 'document',
   
     fields: [
