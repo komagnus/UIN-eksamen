@@ -11,10 +11,28 @@ import sanityClient from "../utils/client.js";
 const Home = () => {
     const [postData, setPost] = useState(null);
     const [click, setClick] = useState(false);
+    const [RelevantPost, setRelevantPost] = useState(null);
 
     const handleClick = () => {
         setClick(!click);
     };
+    
+    useEffect(()=> {
+        sanityClient.fetch(`*[_type == "post" && publishedAt >= ""] | order(publishedAt) {
+        title, 
+        slug,
+        ledetekst,
+        mainImage {
+            asset->{
+                _id,
+                url
+            },
+            alt
+        }
+        }`)
+        .then((data) => setRelevantPost(data))
+        .catch(console.error);
+    }, [] );
 
     useEffect(() => {
         sanityClient
@@ -40,7 +58,26 @@ const Home = () => {
                 <MainContent>
                     <Header/>
                     <ArticleContent>
-                        <RelevantArticle>Her skal den relevante artikkelen ligge</RelevantArticle>
+                        {RelevantPost && RelevantPost.map((post, index) => (
+                        <RelevantArticle>
+                            <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+                                    <span  
+                                        key={index} >
+                                        <img style={{height: "200px", width: "300px"}}
+                                        src={post.mainImage.asset.url} 
+                                        alt={post.mainImage.alt}
+                                        />
+                                    </span>
+                                </Link>
+                                <h3>
+                                    {post.title}
+                                </h3>
+                                <p>
+                                    {post.ledetekst}
+                                </p>
+                                <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
+                                </RelevantArticle>
+                             ))}
                         <AllArticles>
                         {postData && postData.map((post, index) => (
                             <PreviewArticle changeView={click}>
