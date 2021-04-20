@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
-import { FooterContent,FooterWrapper,FooterChild } from "../styles/FooterStyle";
+import { FooterContent,FooterWrapper,FooterChild, FooterAnsatte, FooterAdresse, FooterNav } from "../styles/FooterStyle";
 
 export default function Footer() {
     const [footeransattData, setFooteransatt] = useState(null) ;
@@ -13,8 +13,8 @@ export default function Footer() {
 
 
     useEffect(() => {
-        sanityClient.fetch(`*[_type == "footeransatt"]{
-        ansatt,
+        sanityClient.fetch(`*[_type == "author"]{
+        name,
         rolle,
         }`
         )
@@ -53,35 +53,32 @@ export default function Footer() {
         
         <FooterContent>
         <FooterWrapper>
-        {footeransattData && footeransattData.map((footeransatt, index) => (     
-        <FooterChild>
-        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
-        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
-        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
-        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
-        <li> {footeransatt.rolle} <strong> {footeransatt.ansatt}</strong> </li>
-
-        </FooterChild>
-        ))}
-
-        {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
-        <FooterChild>
-        <li>{footerkontakt.adresse} </li>
-        <li>{footerkontakt.tipstelefon}</li>
-        <li>{footerkontakt.email}</li>
-        </FooterChild>
-        ))}
-
-        
-        {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
-        <FooterChild>
-        <li><NavLink to="" activeClassName="active">{footernavigasjon.navigasjon1}</NavLink> </li>
-        <li><NavLink to="/kontakt" activeClassName="active">{footernavigasjon.navigasjon2}</NavLink> </li>
-        <li><NavLink to="/OmOss" activeClassName="active">{footernavigasjon.navigasjon3}</NavLink> </li>
-        <li><NavLink to="/galleri" activeClassName="active">{footernavigasjon.navigasjon4}</NavLink></li>
-        </FooterChild>
-        ))}
-
+            <FooterAnsatte>
+                {footeransattData && footeransattData.map((footeransatt, index) => (     
+                <FooterChild class="ansatte">
+                <li> <strong>{footeransatt.rolle}:</strong>{' '} <p>{footeransatt.name}</p></li>
+                </FooterChild>
+                ))}
+            </FooterAnsatte>
+            <FooterAdresse>
+            {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
+            <FooterChild>
+                <li>{footerkontakt.adresse} </li>
+                <li>{footerkontakt.tipstelefon}</li>
+                <li>{footerkontakt.email}</li>
+            </FooterChild>
+                ))}
+            </FooterAdresse>
+            <FooterNav>
+                {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
+                <FooterChild>
+                <li><NavLink to="" activeClassName="active">{footernavigasjon.navigasjon1}</NavLink> </li>
+                <li><NavLink to="/kontakt" activeClassName="active">{footernavigasjon.navigasjon2}</NavLink> </li>
+                <li><NavLink to="/OmOss" activeClassName="active">{footernavigasjon.navigasjon3}</NavLink> </li>
+                <li><NavLink to="/galleri" activeClassName="active">{footernavigasjon.navigasjon4}</NavLink></li>
+                </FooterChild>
+                ))}
+            </FooterNav>
         </FooterWrapper>
         </FooterContent>
     );

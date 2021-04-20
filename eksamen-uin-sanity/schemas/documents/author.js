@@ -18,6 +18,11 @@ export default {
         },
       },
       {
+      title: "Rollen på den ansatte",
+      name: "rolle",
+      type: "string",
+      },
+      {
         name: 'image',
         title: 'Image',
         type: 'image',
