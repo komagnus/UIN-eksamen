@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
 import { Main, AllContent } from "../styles/Style";
-import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst, Button, MoreButton} from "../styles/HomeStyle";
+import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst, Button, MoreButton, TittelWrapper } from "../styles/HomeStyle";
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import sanityClient from "../utils/client.js";
@@ -33,6 +33,7 @@ const Home = () => {
         title, 
         slug,
         ledetekst,
+        typeartikkel,
         mainImage {
             asset->{
                 _id,
@@ -51,6 +52,7 @@ const Home = () => {
             title,
             slug,
             ledetekst,
+            typeartikkel,
             mainImage {
                 asset->{
                     _id,
@@ -82,9 +84,14 @@ const Home = () => {
                                     </Link>
                                 </RelevantImgPreview>
                                 <RelevantTextPreview>
+                                    <TittelWrapper>
                                     <h3>
                                         {post.title}
                                     </h3>
+                                    <p className="artikkeltype">
+                                        {post.typeartikkel}
+                                    </p>
+                                    </TittelWrapper>
                                     <RelevantTekst>
                                         {post.ledetekst}
                                     </RelevantTekst>
@@ -105,12 +112,16 @@ const Home = () => {
                                         />
                                     </span>
                                 </Link>
-                                <h3>
-                                    {post.title}
-                                </h3>
+                                <TittelWrapper>
+                                    <h3>{post.title}</h3>
+                                    <p className="artikkeltype">
+                                        {post.typeartikkel}
+                                    </p>
+                                </TittelWrapper>
                                 <p>
                                     {post.ledetekst}
                                 </p>
+                                
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}

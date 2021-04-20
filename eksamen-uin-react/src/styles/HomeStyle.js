@@ -56,3 +56,7 @@ export const MoreButton = styled.button`
     justify-self: center;
     border-radius: 2%;
 `;
+export const TittelWrapper = styled.section `
+    display: flex;
+    flex-direction: row;
+`;

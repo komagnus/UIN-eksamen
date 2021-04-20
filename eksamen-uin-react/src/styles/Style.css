@@ -23,3 +23,12 @@
 #button2Clicked1 {
     display: block;
 }
+.artikkeltype {
+    background: #40e0d0;
+    border: 2px solid black;
+    color: black;
+    width: fit-content;
+    text-align: center;
+    text-decoration: underline;
+    margin-left: 25%;
+  }

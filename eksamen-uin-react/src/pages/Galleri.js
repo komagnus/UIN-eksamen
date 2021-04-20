@@ -3,7 +3,6 @@ import { AllContent,  Main } from "../styles/Style";
 import Footer from '../components/footer';
 import sanityClient from "../utils/client.js";
 import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
 import React, { useEffect, useState } from "react";
 
 const builder = imageUrlBuilder(sanityClient);

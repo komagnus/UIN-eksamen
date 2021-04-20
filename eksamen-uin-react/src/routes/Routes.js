@@ -16,9 +16,9 @@ const Routes = () => (
                 <Home />
             </Route>
 
-        <Route exact path="/artikkelside">
-        <Artikkelside />
-        </Route>
+            <Route exact path="/artikkelside">
+            <Artikkelside />
+            </Route>
 
             <Route exact path="/kontakt">
                 <Contact />
@@ -36,11 +36,33 @@ const Routes = () => (
                 <SinglePost />
             </Route>
 
+            <Route exact path="/artikkelside/helse">
+            <Artikkelside />
+            </Route>
+
+            <Route exact path="/artikkelside/inspirasjon">
+            <Artikkelside />
+            </Route>
+
+            <Route exact path="/artikkelside/nyheter">
+            <Artikkelside />
+            </Route>
+
+            <Route exact path="/artikkelside/profflag">
+            <Artikkelside />
+            </Route>
+
+            <Route exact path="/artikkelside/tipsogtriks">
+            <Artikkelside />
+            </Route>
+
+            <Route exact path="/artikkelside/tutorials">
+            <Artikkelside />
+            </Route>
+            
             <Route path="*">
                 <NoMatch />
             </Route>
-
-
         </Switch>
     </Router>
 );

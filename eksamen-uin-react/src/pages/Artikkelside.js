@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import sanityClient from "../utils/client.js";
 import '../styles/Artikkelside.css';
 import Header from "../components/header"
+import Artikkelnavigasjon from "../components/artikkelnavigasjon.js";
 
 export default function Post() {
    
@@ -36,6 +37,7 @@ export default function Post() {
 
         <h1 className="sideoverskrift"> Artikkelsiden </h1>
 
+        <Artikkelnavigasjon />
 
         <div>
 

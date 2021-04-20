@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { NavContent, NavContentItem, NavStyle } from "../styles/NavStyle";
 
 export default function Artikkelnavigasjon() { 
-    const [navigationListData, setNavigationListHeader] = useState(null) ;
+    const [navigationListHeaderData, setNavigationListHeader] = useState(null) ;
 
     useEffect(() => {
         sanityClient.fetch(`*[_type == "navigationListHeader"]{
@@ -29,31 +29,31 @@ export default function Artikkelnavigasjon() {
 
             <NavContent>
                 <NavContentItem>
-                    <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname1}</NavLink> 
+                    <NavLink to="/artikkelside/" activeClassName="active">{navigationListHeader.navigationname1}</NavLink> 
                 </NavContentItem>
 
                 <NavContentItem>
-                <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname2}</NavLink> 
+                <NavLink to="/artikkelside/helse" activeClassName="active">{navigationListHeader.navigationname2}</NavLink> 
                </NavContentItem>
 
                 <NavContentItem>
-                    <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname3}</NavLink> 
+                    <NavLink to="/artikkelside/inspirasjon" activeClassName="active">{navigationListHeader.navigationname3}</NavLink> 
                 </NavContentItem>
 
                 <NavContentItem>
-                    <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname4}</NavLink> 
+                    <NavLink to="/artikkelside/nyheter" activeClassName="active">{navigationListHeader.navigationname4}</NavLink> 
                 </NavContentItem> 
 
                 <NavContentItem>
-                <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname5}</NavLink> 
+                <NavLink to="/artikkelside/profflag" activeClassName="active">{navigationListHeader.navigationname5}</NavLink> 
             </NavContentItem> 
 
             <NavContentItem>
-            <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname6}</NavLink> 
+            <NavLink to="/artikkelside/tipsogtriks" activeClassName="active">{navigationListHeader.navigationname6}</NavLink> 
         </NavContentItem> 
 
         <NavContentItem>
-        <NavLink to="/" activeClassName="active">{navigationListHeader.navigationname7}</NavLink> 
+        <NavLink to="/artikkelside/tutorial" activeClassName="active">{navigationListHeader.navigationname7}</NavLink> 
     </NavContentItem> 
                        
            </NavContent>
