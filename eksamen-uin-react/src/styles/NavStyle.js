@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavStyle = styled.nav`
-    display:flex
+    display:flex;
     justify-content: space-around;
     align-self: center;
     width:70%;

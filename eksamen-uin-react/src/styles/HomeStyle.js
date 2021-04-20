@@ -36,12 +36,23 @@ export const AllArticles = styled.article`
     grid-row-end: 3;
     display: flex;
     padding: 20px;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    ${props => props.changeView ? 'row' : 'column'}
 `;
 
 export const PreviewArticle = styled.article`
     padding: 10px;
+`;
+export const Button = styled.button`
+    background-color: #fed049;
+    width: fit-content;
+    justify-self: end;
+`;
+export const MoreButton = styled.button`
+    background-color: #222831;
+    border: 1px solid #fed049;
+    color: #fed049;
+    width: fit-content;
+    padding: 0.3em 1em;
+    justify-self: center;
+    border-radius: 2%;
 `;
