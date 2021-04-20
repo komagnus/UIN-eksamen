@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
 import sanityClient from "../utils/client.js";
 import Header from "../components/header"
 import Footer from "../components/footer";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import '../styles/About.css';
+import React, { useEffect, useState } from "react";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
