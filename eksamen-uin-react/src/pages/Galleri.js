@@ -1,5 +1,5 @@
 import Header from '../components/header'
-import { AllContent,  Main, MainContent, } from "../styles/Style";
+import { AllContent,  Main } from "../styles/Style";
 import Footer from '../components/footer';
 import sanityClient from "../utils/client.js";
 import imageUrlBuilder from "@sanity/image-url";
@@ -27,7 +27,7 @@ export default function About() {
         <>
         <Main>
             <AllContent>
-                <MainContent>
+
                     <Header/>
                     <h1>Galleriswasadwide</h1>
                     {galleryData && galleryData.map((gallery, index) => (                  
@@ -49,7 +49,6 @@ export default function About() {
                         </div>
                         ))}
                     <Footer/>
-                </MainContent>
             </AllContent>
         </Main>
         </>

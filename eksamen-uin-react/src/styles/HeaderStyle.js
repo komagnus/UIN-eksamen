@@ -5,7 +5,8 @@ export const HeaderWrapper = styled.div`
     grid-row-start: 1;
     grid-row-end: 2;
     display: flex;
-    &:first-child {
-        padding-left: 2rem;
-    }
+`;
+export const Navigation = styled.section`
+    width:50%;
+
 `;
