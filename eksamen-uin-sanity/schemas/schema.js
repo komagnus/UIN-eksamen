@@ -6,11 +6,12 @@ import author from './documents/author';
 import navigationList from './navigationList';
 import footerkontakt from './footerkontakt';
 import footernavigasjon from './footernavigasjon';
-
+import gallery from './documents/gallery';
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    gallery,
     post,
     author,
     blockContent,
