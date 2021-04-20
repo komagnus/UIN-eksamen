@@ -4,7 +4,8 @@ import Footer from "../components/footer";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import React, { useEffect, useState } from "react";
-
+import { AllContent, Main, MainContent,} from "../styles/Style";
+import {AboutContent} from "../styles/About";
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -27,31 +28,33 @@ export default function About() {
 
     return (
 
-        <main>
+        <Main>
+          <AllContent>
+            <MainContent>
+                <Header/>
+                    <AboutContent>
+                        {authorData && authorData.map((author, index) => (                  
+                        <div className="hoved"> 
 
-        <Header/>
+                        <img src={urlFor(author.authorImage).url()} alt={author.name}
+                        style={{height: "250px", width: "250px"}}/>
 
-        {authorData && authorData.map((author, index) => (                  
-        <div className="hoved"> 
+                        <div>
 
-        <img src={urlFor(author.authorImage).url()} alt={author.name}
-        style={{height: "250px", width: "250px"}}/>
-
-        <div>
-
-        <h1> {author.name} </h1>
+                        <h1> {author.name} </h1>
          
         
-        <div>
-        <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
-        </div>
-        </div>
+                        <div>
+                        <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
+                        </div>
+                        </div>
 
-        </div>
-        ))}
-
-        <Footer/>
-
-        </main>
+                        </div>
+                        ))}
+                        </AboutContent>
+                    <Footer/>
+                </MainContent>
+            </AllContent>  
+        </Main>
 );
     }
