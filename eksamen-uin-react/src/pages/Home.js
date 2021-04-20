@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
 import { Main, MainContent, AllContent } from "../styles/Style";
-import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle } from "../styles/HomeStyle";
+import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst } from "../styles/HomeStyle";
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import sanityClient from "../utils/client.js";
@@ -11,14 +11,14 @@ import sanityClient from "../utils/client.js";
 const Home = () => {
     const [postData, setPost] = useState(null);
     const [click, setClick] = useState(false);
-    const [RelevantPost, setRelevantPost] = useState(null);
+    const [RelevantPostData, setRelevantPost] = useState(null);
 
     const handleClick = () => {
         setClick(!click);
     };
     
     useEffect(()=> {
-        sanityClient.fetch(`*[_type == "post" && publishedAt >= ""] | order(publishedAt) {
+        sanityClient.fetch(`*[_type == "post" && featured == true] {
         title, 
         slug,
         ledetekst,
@@ -36,7 +36,7 @@ const Home = () => {
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post"] {
+        .fetch(`*[_type == "post" && featured != true] {
             title,
             slug,
             ledetekst,
@@ -58,26 +58,31 @@ const Home = () => {
                 <MainContent>
                     <Header/>
                     <ArticleContent>
-                        {RelevantPost && RelevantPost.map((post, index) => (
+                        {RelevantPostData && RelevantPostData.map((post, index) => (
                         <RelevantArticle>
-                            <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                                    <span  
-                                        key={index} >
-                                        <img style={{height: "200px", width: "300px"}}
-                                        src={post.mainImage.asset.url} 
-                                        alt={post.mainImage.alt}
-                                        />
-                                    </span>
-                                </Link>
-                                <h3>
-                                    {post.title}
-                                </h3>
-                                <p>
-                                    {post.ledetekst}
-                                </p>
-                                <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
-                                </RelevantArticle>
-                             ))}
+                            <RelevantArticlePreview>
+                                <RelevantImgPreview>
+                                    <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+                                        <span key={index} >
+                                            <img style={{height: "300px", width: "500px"}}
+                                            src={post.mainImage.asset.url} 
+                                            alt={post.mainImage.alt}
+                                            />
+                                        </span>
+                                    </Link>
+                                </RelevantImgPreview>
+                                <RelevantTextPreview>
+                                    <h3>
+                                        {post.title}
+                                    </h3>
+                                    <RelevantTekst>
+                                        {post.ledetekst}
+                                    </RelevantTekst>
+                                    <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
+                                </RelevantTextPreview>
+                            </RelevantArticlePreview>
+                        </RelevantArticle>
+                        ))}
                         <AllArticles>
                         {postData && postData.map((post, index) => (
                             <PreviewArticle changeView={click}>
