@@ -11,6 +11,7 @@ import gallery from './documents/gallery';
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    gallery,
     post,
     author,
     blockContent,
