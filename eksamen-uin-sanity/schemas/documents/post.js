@@ -63,6 +63,11 @@ export default {
         title: 'Body',
         type: 'blockContent',
       },
+      {
+        name: 'featured',
+        title: 'Featured, remeber to undo current featured article befor choosing new.',
+        type: 'boolean'
+      },
     ],
   
     preview: {
