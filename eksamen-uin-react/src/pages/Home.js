@@ -18,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post"] {
+        .fetch(`*[_type == "post" && publishedAt > ""] | order(publishedAt) {            
             title,
             slug,
             ledetekst,
