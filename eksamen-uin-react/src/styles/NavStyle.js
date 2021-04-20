@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
 export const NavStyle = styled.nav`
-    padding-left: 10rem;
+    display:flex
+    justify-content: space-around;
     align-self: center;
+    width:70%;
 `;
 export const NavContent = styled.ul`
     display: flex;
+    justify-content: space-around;
     list-style-type: none;
 `;
 
 export const NavContentItem = styled.li`
-    padding: 0 3rem;
     &:first-child {
-        padding-left:2rem;
-    }
+}
     & > a {
         color: #810034;
-        font-size: 20px;
-        padding: 7px 0;
-        display: block;
+        width:30%;
+        font-size: 1.3vw;
         text-decoration: none;
     }
     &.active {

@@ -1,6 +1,6 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
-import { Main, MainContent, AllContent } from "../styles/Style";
+import { Main, AllContent } from "../styles/Style";
 import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst } from "../styles/HomeStyle";
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
@@ -55,7 +55,6 @@ const Home = () => {
         <>
         <Main>
             <AllContent>
-                <MainContent>
                     <Header/>
                     <ArticleContent>
                         {RelevantPostData && RelevantPostData.map((post, index) => (
@@ -108,7 +107,6 @@ const Home = () => {
                         </AllArticles>
                     </ArticleContent>
                     <Footer/>
-                </MainContent>
             </AllContent>
         </Main>
         </>

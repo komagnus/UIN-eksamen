@@ -1,6 +1,6 @@
 import React from "react"
 import Header from '../components/header'
-import { AllContent,  Main, MainContent, } from "../styles/Style";
+import { AllContent,  Main } from "../styles/Style";
 import Footer from '../components/footer';
 
 export default function Galleri () {
@@ -9,11 +9,10 @@ export default function Galleri () {
         <>
         <Main>
             <AllContent>
-                <MainContent>
+
                     <Header/>
                     <h1>Galleriside</h1>
                     <Footer/>
-                </MainContent>
             </AllContent>
         </Main>
         </>
