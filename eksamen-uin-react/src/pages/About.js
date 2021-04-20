@@ -1,21 +1,57 @@
-import React from "react";
-import Header from '../components/header';
-import { AllContent, Main, MainContent, } from "../styles/Style";
-import Footer from '../components/footer';
+import sanityClient from "../utils/client.js";
+import Header from "../components/header"
+import Footer from "../components/footer";
+import imageUrlBuilder from "@sanity/image-url";
+import BlockContent from "@sanity/block-content-to-react";
+import React, { useEffect, useState } from "react";
 
-const About = () => {
-return (
-        <>
-        <Main>
-            <AllContent>
-                <MainContent>
-                    <Header/>
-                    <h1>Om oss side</h1>
-                    <Footer/>
-                </MainContent>
-            </AllContent>
-        </Main>
-        </>
-    );
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+    return builder.image(source)
 }
-export default About;
+
+export default function About() {
+    const [authorData, setAuthor] = useState(null) ;
+
+    useEffect(() => {
+        sanityClient.fetch(`*[_type == "author"]{
+        name,
+        bio,
+        "authorImage": image.asset->url
+        }`
+        )
+        .then((data) => setAuthor(data))
+        .catch(console.error);
+    }, []);
+
+
+    return (
+
+        <main>
+
+        <Header/>
+
+        {authorData && authorData.map((author, index) => (                  
+        <div className="hoved"> 
+
+        <img src={urlFor(author.authorImage).url()} alt={author.name}
+        style={{height: "250px", width: "250px"}}/>
+
+        <div>
+
+        <h1> {author.name} </h1>
+         
+        
+        <div>
+        <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
+        </div>
+        </div>
+
+        </div>
+        ))}
+
+        <Footer/>
+
+        </main>
+);
+    }
