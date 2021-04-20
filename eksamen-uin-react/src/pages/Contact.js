@@ -1,6 +1,6 @@
 import React from "react";
 import Header from '../components/header'
-import { AllContent, Main, MainContent,} from "../styles/Style";
+import { AllContent, Main,} from "../styles/Style";
 import { KontaktossSide, KontaktossWrapper, Kontaktinfocontent, KontaktRingoss, KontaktossSkjema, KontaktossSkjemaWrapper,KontaktossNyhetsbrev,KontaktossNyhetsbrevWrapper } from "../styles/ContactStyle"
 import Footer from '../components/footer';
 const  handleClick = () => {
@@ -12,7 +12,6 @@ const Contact = () => {
         <>
         <Main>
             <AllContent>
-                <MainContent>
                     <Header/>
                     <KontaktossSide>
                         <KontaktossWrapper>
@@ -43,7 +42,6 @@ const Contact = () => {
                         </KontaktossNyhetsbrevWrapper>
                     </KontaktossSide>
                     <Footer/>
-                </MainContent>
             </AllContent>
         </Main>
         </>

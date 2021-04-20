@@ -1,18 +1,16 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-    display: grid;
-    grid-template-columns: 25rem auto 25rem;
-    grid-template-rows: auto auto auto;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+{ grid-area: 1 / 1 / 6 / 6; }
     background-color: #393e46;
 `;
 export const AllContent = styled.section`
-    grid-column-start: 2;
-    grid-column-end: 3;
+    { grid-area: 1 / 2 / 6 / 5; }
     border: 1px solid black;
-`;
-export const MainContent = styled.section`
-    grid-row-start: 2;
-    grid-row-end: 3;
     background-color: #222831;
 `;

@@ -5,7 +5,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import '../styles/SinglePost.css';
 import Header from '../components/header';
-import { AllContent, Main, MainContent, } from "../styles/Style";
+import { AllContent, Main, } from "../styles/Style";
 import Footer from '../components/footer';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -55,7 +55,6 @@ useEffect(() => {
         <>
         <Main>
             <AllContent>
-                <MainContent>
                     <Header/>
                     <body> 
                         <main className="hovedsiden">
@@ -141,7 +140,6 @@ useEffect(() => {
                             </main>
                     </body>
                     <Footer/>
-                </MainContent>
             </AllContent>
         </Main>
         </>

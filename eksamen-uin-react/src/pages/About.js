@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import React, { useEffect, useState } from "react";
-import { AllContent, Main, MainContent,} from "../styles/Style";
+import { AllContent, Main,} from "../styles/Style";
 import {AboutContent} from "../styles/About";
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -30,7 +30,6 @@ export default function About() {
 
         <Main>
           <AllContent>
-            <MainContent>
                 <Header/>
                     <AboutContent>
                         {authorData && authorData.map((author, index) => (                  
@@ -53,7 +52,6 @@ export default function About() {
                         ))}
                         </AboutContent>
                     <Footer/>
-                </MainContent>
             </AllContent>  
         </Main>
 );
