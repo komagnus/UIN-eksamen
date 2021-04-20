@@ -10,13 +10,9 @@ import sanityClient from "../utils/client.js";
 
 const Home = () => {
     const [postData, setPost] = useState(null);
-    const [click, setClick] = useState(false);
     const [RelevantPostData, setRelevantPost] = useState(null);
 
-    const handleClick = () => {
-        setClick(!click);
-    };
-    
+   
     useEffect(()=> {
         sanityClient.fetch(`*[_type == "post" && featured == true] {
         title, 
@@ -36,7 +32,7 @@ const Home = () => {
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && featured != true] {
+        .fetch(`*[_type == "post" && featured != true ][0..9] | order(publishedAt asc){
             title,
             slug,
             ledetekst,
@@ -84,7 +80,7 @@ const Home = () => {
                         ))}
                         <AllArticles>
                         {postData && postData.map((post, index) => (
-                            <PreviewArticle changeView={click}>
+                            <PreviewArticle>
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                                     <span  
                                         key={index} >
@@ -103,7 +99,6 @@ const Home = () => {
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}
-                        <button onclick={handleClick}>Change View</button>
                         </AllArticles>
                     </ArticleContent>
                     <Footer/>
