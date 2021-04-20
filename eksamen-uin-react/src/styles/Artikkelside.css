@@ -1,0 +1,30 @@
+.sideoverskrift {
+    text-align: center;
+    margin: auto;
+    font-size: 80px;
+    color: white;
+    padding-bottom: 90px;
+    padding-top: 50px;
+    
+    }
+    
+    .hovedarket {
+        padding-bottom: 1200px;
+        max-width: 1600px;
+        margin: auto;
+    }
+    
+    
+    
+    .column {
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        margin: 5px;
+      }
+    
+    
+      img {
+        height: 250px;
+        width: 380px;
+      }
