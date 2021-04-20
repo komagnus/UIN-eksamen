@@ -8,7 +8,7 @@ import navigationList from './navigationList';
 import footeransatt from './footeransatt';
 import footerkontakt from './footerkontakt';
 import footernavigasjon from './footernavigasjon';
-
+import gallery from './documents/gallery';
 
 =======
 import Footer from "./documents/footer"

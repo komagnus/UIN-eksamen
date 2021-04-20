@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.main`
     display: grid;
-    grid-template-columns: 25rem auto 25rem;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto auto auto;
     background-color: #393e46;
 `;
