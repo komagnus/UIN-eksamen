@@ -7,7 +7,7 @@ import '../styles/SinglePost.css';
 import Header from '../components/header';
 import { AllContent, Main, } from "../styles/Style";
 import Footer from '../components/footer';
-import Artikkelnavigasjon from "../components/artikkelnavigasjon.js";
+import Artikkelnavigasjon from "../components/Artikkelnavigasjon.js";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -61,14 +61,9 @@ useEffect(() => {
                         <main className="hovedsiden">
 
 
-                        <div className="rc_logo">                 
-                        <h3 title="Logo">Artikler</h3>
-                        </div>  
+
                         
-                        <Artikkelnavigasjon/>
-
-                        <span className="line"></span>
-
+                        <Artikkelnavigasjon />
 
 
                         <article>
