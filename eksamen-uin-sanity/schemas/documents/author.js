@@ -23,6 +23,11 @@ export default {
       type: "string",
       },
       {
+        name: 'sjef',
+        title: 'Er sjef for bedriften',
+        type: 'boolean'
+      },
+      {
         name: 'image',
         title: 'Image',
         type: 'image',

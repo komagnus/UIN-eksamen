@@ -4,14 +4,23 @@ export const AboutContent = styled.section`
     justify-content: center;
     justify-content: space-around;
     padding-bottom:30px;
-    flex-wrap: wrap
-    }
+    flex-wrap: wrap;
     & > .hoved {
         display: flex;
         flex-direction: column;
         max-width:250px;
         padding:10px;
     }
+`;
 
-}
+export const BossContent = styled.section`
+    display:flex;
+    justify-content: center;
+    padding-bottom:30px;
+    flex-wrap: wrap;
+    & > .hoved {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 `;

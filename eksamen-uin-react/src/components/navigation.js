@@ -11,6 +11,7 @@ export default function Navigation() {
         navigationname1,
         navigationname2,
         navigationname3,
+        navigationname4,
         }`).then((data) => setNavigationList(data))
         .catch(console.error);
     }, []);
@@ -25,13 +26,19 @@ export default function Navigation() {
 
             <NavContent>
                 <NavContentItem>
-                    <NavLink to="/omOss" activeClassName="active">{navigationList.navigationname1}</NavLink> 
+                    <NavLink to="/artikkelside" activeClassName="active">{navigationList.navigationname1}</NavLink> 
                 </NavContentItem>
+
                 <NavContentItem>
-                    <NavLink to="/kontakt" activeClassName="active">{navigationList.navigationname2}</NavLink> 
+                <NavLink to="/omOss" activeClassName="active">{navigationList.navigationname2}</NavLink> 
+               </NavContentItem>
+
+                <NavContentItem>
+                    <NavLink to="/kontakt" activeClassName="active">{navigationList.navigationname3}</NavLink> 
                 </NavContentItem>
+
                 <NavContentItem>
-                    <NavLink to="/galleri" activeClassName="active">{navigationList.navigationname3}</NavLink> 
+                    <NavLink to="/galleri" activeClassName="active">{navigationList.navigationname4}</NavLink> 
                 </NavContentItem> 
                        
            </NavContent>
