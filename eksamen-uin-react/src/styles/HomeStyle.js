@@ -38,6 +38,13 @@ export const AllArticles = styled.article`
     padding: 20px;
     flex-wrap: wrap;
 `;
+export const EkstraArticles = styled.article `
+    color: #eeeeee;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding: 20px;
+    flex-wrap: wrap;
+`;
 
 export const PreviewArticle = styled.article`
     padding: 10px;

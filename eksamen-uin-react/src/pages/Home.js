@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
 import { Main, AllContent } from "../styles/Style";
-import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst, Button, MoreButton, TittelWrapper } from "../styles/HomeStyle";
+import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle,EkstraArticles, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst, Button, MoreButton, TittelWrapper } from "../styles/HomeStyle";
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import sanityClient from "../utils/client.js";
@@ -151,8 +151,10 @@ const Home = () => {
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}
+                        </AllArticles>
+                        <EkstraArticles id="second">
                         {postData2 && postData2.map((post, index) => (
-                            <PreviewArticle id="second">
+                            <PreviewArticle >
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                                     <span  
                                         key={index} >
@@ -175,7 +177,7 @@ const Home = () => {
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}
-                        </AllArticles>
+                        </EkstraArticles>
                         <MoreButton id="button3" onClick={handleClick1}>Se mer</MoreButton>
                         <MoreButton id="button4" onClick={handleClick2}>Se mindre</MoreButton>
                         <Button id ="button1" onClick={handleClick3}>Endre visning </Button>
