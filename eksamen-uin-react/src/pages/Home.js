@@ -59,7 +59,7 @@ const Home = () => {
                                 <RelevantImgPreview>
                                     <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                                         <span key={index} >
-                                            <img style={{height: "300px", width: "500px"}}
+                                            <img className={"hovedbilde"}
                                             src={post.mainImage.asset.url} 
                                             alt={post.mainImage.alt}
                                             />

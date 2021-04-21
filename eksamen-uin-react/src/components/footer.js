@@ -52,15 +52,8 @@ export default function Footer() {
     return (
         
         <FooterContent>
-            <FooterWrapper>
-                <FooterAnsatte>
-                    {footeransattData && footeransattData.map((footeransatt, index) => (     
-                    <FooterChild>
-                    <li> <strong>{footeransatt.rolle}:</strong>{' '} {footeransatt.name}</li>
-                    </FooterChild>
-                    ))}
-                </FooterAnsatte>
-                <FooterAdresse>
+
+            <FooterAdresse>
                 {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
                 <FooterChild>
                     <li>{footerkontakt.adresse} </li>
@@ -68,7 +61,16 @@ export default function Footer() {
                     <li>{footerkontakt.email}</li>
                 </FooterChild>
                     ))}
-                </FooterAdresse>
+            </FooterAdresse>
+
+            <FooterWrapper>
+                <FooterAnsatte>
+                    {footeransattData && footeransattData.map((footeransatt, index) => (     
+                    <FooterChild>
+                    <li> <strong>{footeransatt.rolle}:</strong> {" "}{footeransatt.name}</li>
+                    </FooterChild>
+                    ))}
+                </FooterAnsatte>
                 <FooterNav>
                     {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
                     <FooterChild>

@@ -20,6 +20,9 @@ export const NavContentItem = styled.li`
         width:30%;
         font-size: 1.3vw;
         text-decoration: none;
+        @media (max-width: 768px){
+            font-size: 2vw;
+            }
     }
     &.active {
         text-decoration: underline;
