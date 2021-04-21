@@ -50,7 +50,13 @@ export const AllArticles = styled.article`
     justify-content: space-around;
     ${props => props.changeView ? 'row' : 'column'}
 `;
-
+export const EkstraArticles = styled.article `
+    color: #eeeeee;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding: 20px;
+    flex-wrap: wrap;
+`;
 export const PreviewArticle = styled.article`
     padding: 10px;
 `;

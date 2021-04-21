@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
-import { NavContent, NavContentItem, NavStyle } from "../styles/NavStyle";
+import { NavContent, NavContentItem, Nav2Style } from "../styles/NavStyle";
 
 export default function Artikkelnavigasjon() { 
     const [navigationListHeaderData, setNavigationListHeader] = useState(null) ;
@@ -24,7 +24,7 @@ export default function Artikkelnavigasjon() {
 
     return (
 
-        <NavStyle>
+        <Nav2Style>
         {navigationListHeaderData && navigationListHeaderData.map((navigationListHeader, index) => (                  
 
             <NavContent>
@@ -58,7 +58,7 @@ export default function Artikkelnavigasjon() {
                        
            </NavContent>
            ))}
-        </NavStyle>
+        </Nav2Style>
     );
 };
 

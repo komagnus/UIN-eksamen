@@ -48,6 +48,8 @@ export default function About() {
                         <div className="hoved"> 
                             <img src={urlFor(author.authorImage).url()} alt={author.name}
                             style={{height: "250px", width: "250px"}}/>
+
+                            
                             <div>
                                 <h1> {author.name} </h1>
                                 <div>

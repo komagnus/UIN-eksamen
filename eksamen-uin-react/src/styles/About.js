@@ -15,12 +15,8 @@ export const AboutContent = styled.section`
 
 export const BossContent = styled.section`
     display:flex;
+    flex-direction:column;
     justify-content: center;
-    padding-bottom:30px;
-    flex-wrap: wrap;
-    & > .hoved {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+    align-items:center;
+    padding-top:30px;
 `;
