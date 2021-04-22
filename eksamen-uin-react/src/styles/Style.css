@@ -2,3 +2,52 @@
     text-decoration: none;
     width :30%;
 }
+#row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+#column {
+    flex-direction: column;
+    align-content: center; 
+}
+#column>* { 
+    border-bottom: 1px solid #fed049; 
+    justify-self: space-between;
+}
+#button2 {
+    display: none;
+}
+#button1Clicked {
+    display: none;
+}
+#button2Clicked1 {
+    display: block;
+}
+.artikkeltype {
+    background: #40e0d0;
+    border: 2px solid black;
+    color: black;
+    width: fit-content;
+    text-align: center;
+    text-decoration: underline;
+    margin-left: 25%;
+}
+#second {
+    display: none;
+}
+#secondClicked {
+    display: flex;
+}
+#button4 {
+    display: none;
+}
+#button3Clicked {
+    display: none;
+}
+#button4Clicked {
+    display: flex;
+    flex-direction: row;
+}
+#button3 {
+    display: flex;
+}

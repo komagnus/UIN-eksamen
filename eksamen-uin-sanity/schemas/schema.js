@@ -8,15 +8,16 @@ import footerkontakt from './footerkontakt';
 import footernavigasjon from './footernavigasjon';
 import gallery from './documents/gallery';
 
+
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    gallery,
     post,
     author,
     blockContent,
     navigationList,
     footerkontakt,
     footernavigasjon,
+    gallery,
   ]),
 })

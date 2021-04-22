@@ -52,34 +52,36 @@ export default function Footer() {
     return (
         
         <FooterContent>
-        <FooterWrapper>
-            <FooterAnsatte>
-                {footeransattData && footeransattData.map((footeransatt, index) => (     
-                <FooterChild class="ansatte">
-                <li> <strong>{footeransatt.rolle}:</strong>{' '} <p>{footeransatt.name}</p></li>
-                </FooterChild>
-                ))}
-            </FooterAnsatte>
+
             <FooterAdresse>
-            {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
-            <FooterChild>
-                <li>{footerkontakt.adresse} </li>
-                <li>{footerkontakt.tipstelefon}</li>
-                <li>{footerkontakt.email}</li>
-            </FooterChild>
-                ))}
-            </FooterAdresse>
-            <FooterNav>
-                {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
+                {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
                 <FooterChild>
-                <li><NavLink to="" activeClassName="active">{footernavigasjon.navigasjon1}</NavLink> </li>
-                <li><NavLink to="/kontakt" activeClassName="active">{footernavigasjon.navigasjon2}</NavLink> </li>
-                <li><NavLink to="/OmOss" activeClassName="active">{footernavigasjon.navigasjon3}</NavLink> </li>
-                <li><NavLink to="/galleri" activeClassName="active">{footernavigasjon.navigasjon4}</NavLink></li>
+                    <li>{footerkontakt.adresse} </li>
+                    <li>{footerkontakt.tipstelefon}</li>
+                    <li>{footerkontakt.email}</li>
                 </FooterChild>
-                ))}
-            </FooterNav>
-        </FooterWrapper>
+                    ))}
+            </FooterAdresse>
+
+            <FooterWrapper>
+                <FooterAnsatte>
+                    {footeransattData && footeransattData.map((footeransatt, index) => (     
+                    <FooterChild>
+                    <li> <strong>{footeransatt.rolle}:</strong> {" "}{footeransatt.name}</li>
+                    </FooterChild>
+                    ))}
+                </FooterAnsatte>
+                <FooterNav>
+                    {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
+                    <FooterChild>
+                    <li><NavLink to="" activeClassName="active">{footernavigasjon.navigasjon1}</NavLink> </li>
+                    <li><NavLink to="/kontakt" activeClassName="active">{footernavigasjon.navigasjon2}</NavLink> </li>
+                    <li><NavLink to="/OmOss" activeClassName="active">{footernavigasjon.navigasjon3}</NavLink> </li>
+                    <li><NavLink to="/galleri" activeClassName="active">{footernavigasjon.navigasjon4}</NavLink></li>
+                    </FooterChild>
+                    ))}
+                </FooterNav>
+            </FooterWrapper>
         </FooterContent>
     );
 }
