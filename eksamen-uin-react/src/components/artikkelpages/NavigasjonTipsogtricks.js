@@ -11,7 +11,7 @@ export default function Post() {
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && typeartikkel == "Tips/tricks"] | order(publishedAt) {            
+        .fetch(`*[_type == "post" && typeartikkel == "Tips/tricks"] | order(publishedAt desc) {            
             title,
             slug,
             mainImage {
