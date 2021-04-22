@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-import sanityClient from "../utils/client.js";
-import '../styles/Artikkelside.css';
-import Header from "../components/header"
-import Artikkelnavigasjon from "../components/artikkelnavigasjon.js";
+import sanityClient from "../../utils/client.js";
+import '../../styles/Artikkelside.css';
+import Header from "../../components/header"
+import Artikkelnavigasjon from "../Artikkelnavigasjon.js";
 
 export default function Post() {
    
@@ -11,7 +11,7 @@ export default function Post() {
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && publishedAt >= ""] | order(publishedAt) {            
+        .fetch(`*[_type == "post" && typeartikkel == "Inspirasjon"] | order(publishedAt desc) {            
             title,
             slug,
             mainImage {
@@ -35,7 +35,7 @@ export default function Post() {
         <section>
         <Header/>
 
-        <h1 className="sideoverskrift"> Artikkelsiden </h1>
+        <h1 className="sideoverskrift"> Inspirasjon - </h1>
 
         <Artikkelnavigasjon />
 
