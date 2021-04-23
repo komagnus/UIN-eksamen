@@ -61,14 +61,9 @@ useEffect(() => {
                         <main className="hovedsiden">
 
 
-                        <div className="rc_logo">                 
-                        <h3 title="Logo">Artikler</h3>
-                        </div>  
+
                         
-                        <Artikkelnavigasjon/>
-
-                        <span className="line"></span>
-
+                        <Artikkelnavigasjon />
 
 
                         <article>

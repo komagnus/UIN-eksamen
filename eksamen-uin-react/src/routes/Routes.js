@@ -5,7 +5,16 @@ import Contact from '../pages/Contact.js';
 import Galleri from '../pages/Galleri.js';
 import About from '../pages/About.js';
 import SinglePost from '../pages/SinglePost.js';
-import Artikkelside from '../pages/Artikkelside.js';
+
+
+import NavigasjonAlle from '../components/artikkelpages/NavigasjonAlle.js';
+import NavigasjonHelse from '../components/artikkelpages/NavigasjonHelse.js';
+import NavigasjonInspirasjon from '../components/artikkelpages/NavigasjonInspirasjon.js';
+import NavigasjonNyheter from '../components/artikkelpages/NavigasjonNyheter.js';
+import NavigasjonProfflag from '../components/artikkelpages/NavigasjonProfflag.js';
+import NavigasjonTipsogtricks from '../components/artikkelpages/NavigasjonTipsogtricks.js';
+import NavigasjonTutorials from '../components/artikkelpages/NavigasjonTutorials.js';
+
 
 
 
@@ -16,8 +25,8 @@ const Routes = () => (
                 <Home />
             </Route>
 
-            <Route exact path="/artikkelside">
-            <Artikkelside />
+            <Route exact path="/NavigasjonAlle">
+            <NavigasjonAlle />
             </Route>
 
             <Route exact path="/kontakt">
@@ -36,28 +45,32 @@ const Routes = () => (
                 <SinglePost />
             </Route>
 
-            <Route exact path="/artikkelside/helse">
-            <Artikkelside />
+            <Route exact path="/NavigasjonAlle">
+            <NavigasjonAlle />
             </Route>
 
-            <Route exact path="/artikkelside/inspirasjon">
-            <Artikkelside />
+            <Route exact path="/NavigasjonHelse">
+            <NavigasjonHelse />
             </Route>
 
-            <Route exact path="/artikkelside/nyheter">
-            <Artikkelside />
+            <Route exact path="/NavigasjonInspirasjon">
+            <NavigasjonInspirasjon />
             </Route>
 
-            <Route exact path="/artikkelside/profflag">
-            <Artikkelside />
+            <Route exact path="/NavigasjonNyheter">
+            <NavigasjonNyheter />
             </Route>
 
-            <Route exact path="/artikkelside/tipsogtriks">
-            <Artikkelside />
+            <Route exact path="/NavigasjonProfflag">
+            <NavigasjonProfflag />
             </Route>
 
-            <Route exact path="/artikkelside/tutorials">
-            <Artikkelside />
+            <Route exact path="/NavigasjonTipsogtricks">
+            <NavigasjonTipsogtricks />
+            </Route>
+
+            <Route exact path="/NavigasjonTutorials">
+            <NavigasjonTutorials />
             </Route>
             
             <Route path="*">

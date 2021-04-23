@@ -26,7 +26,7 @@ export default function Navigation() {
 
             <NavContent>
                 <NavContentItem>
-                    <NavLink to="/artikkelside" activeClassName="active">{navigationList.navigationname1}</NavLink> 
+                    <NavLink to="/NavigasjonAlle" activeClassName="active">{navigationList.navigationname1}</NavLink> 
                 </NavContentItem>
 
                 <NavContentItem>
