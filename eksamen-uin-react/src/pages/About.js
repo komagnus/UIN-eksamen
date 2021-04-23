@@ -19,6 +19,7 @@ export default function About() {
         sanityClient.fetch(`*[_type == "author" && sjef != true ]{
         name,
         bio,
+        rolle,
         "authorImage": image.asset->url
         }`
         )
@@ -30,6 +31,7 @@ export default function About() {
         sanityClient.fetch(`*[_type == "author" && sjef == true ]{
         name,
         bio,
+        rolle,
         "authorImage": image.asset->url
         }`
         )
@@ -52,6 +54,7 @@ export default function About() {
                             
                             <div>
                                 <h1> {author.name} </h1>
+                                <h2>{author.rolle}</h2>
                                 <div>
                                 <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
                                 </div>
@@ -69,6 +72,7 @@ export default function About() {
                         <div>
 
                         <h1> {author.name} </h1>
+                        <h2> {author.rolle}</h2>
          
         
                         <div>

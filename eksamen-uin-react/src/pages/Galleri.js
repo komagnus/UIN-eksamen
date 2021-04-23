@@ -37,8 +37,7 @@ export default function About() {
                                      
                         
 
-                        <img src={urlFor(gallery.galleryImage).url()} alt={gallery.beskrivelse}
-                        style={{height: "250px", width: "250px"}}/>
+                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse}/>
 
                         
 
