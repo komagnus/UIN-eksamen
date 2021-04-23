@@ -31,4 +31,23 @@
     text-align: center;
     text-decoration: underline;
     margin-left: 25%;
-  }
+}
+#second {
+    display: none;
+}
+#secondClicked {
+    display: flex;
+}
+#button4 {
+    display: none;
+}
+#button3Clicked {
+    display: none;
+}
+#button4Clicked {
+    display: flex;
+    flex-direction: row;
+}
+#button3 {
+    display: flex;
+}

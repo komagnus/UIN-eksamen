@@ -1,33 +1,43 @@
 import styled from "styled-components";
 
 export const ArticleContent = styled.section`
-    display: grid;
-    grid-template-rows: auto auto;
+
 `;
 
 export const RelevantArticle = styled.article`
     color: #eeeeee;
-    
-    grid-row-start: 1;
-    grid-row-end: 2;
-    padding: 20px;
     border-bottom: 1px solid #fed049;
 `;
 export const RelevantArticlePreview = styled.h2 `
-    display: grid;
-    grid-template-rows: auto auto;
+display:flex;
+flex-direction:row;
+justify-content: space-around;
+@media (max-width: 768px){
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    }
 `;
 export const RelevantImgPreview = styled.span`
-    grid-column-start: 1;
-    grid-column-end: 2;
-
+width:50%;
+@media (max-width: 768px){
+    display:flex;
+    width:80%;
+    }
 `;
 export const RelevantTextPreview = styled.span`
-    grid-column-start: 3;
-    grid-column-end: 4;
+width:50%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+@media (max-width: 768px){
+    width:100%;
+    }
 `;
-export const RelevantTekst = styled.p `
-    font-size: medium;
+export const RelevantTekst = styled.section `
+    font-size: 10wv;
 `;
 
 export const AllArticles = styled.article`
@@ -35,10 +45,18 @@ export const AllArticles = styled.article`
     grid-row-start: 2;
     grid-row-end: 3;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    ${props => props.changeView ? 'row' : 'column'}
+`;
+export const EkstraArticles = styled.article `
+    color: #eeeeee;
+    grid-row-start: 3;
+    grid-row-end: 4;
     padding: 20px;
     flex-wrap: wrap;
 `;
-
 export const PreviewArticle = styled.article`
     padding: 10px;
 `;

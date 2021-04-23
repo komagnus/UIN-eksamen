@@ -1,8 +1,9 @@
+  
 import React, { useEffect, useState } from "react";
 import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
+import { NavContent, NavContentItem, Nav2Style } from "../styles/NavStyle";
 import '../styles/Artikkelnavigasjon.css';
-
 
 export default function Artikkelnavigasjon() { 
     const [navigationListHeaderData, setNavigationListHeader] = useState(null) ;
@@ -54,4 +55,3 @@ export default function Artikkelnavigasjon() {
 
     );
 };
-
