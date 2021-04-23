@@ -14,13 +14,16 @@
     border-bottom: 1px solid #fed049; 
     justify-self: space-between;
 }
-#button2 {
+#moreClicked {
     display: none;
 }
-#button1Clicked {
+#button4 {
     display: none;
 }
-#button2Clicked1 {
+#button3Clicked {
+    display: none;
+}
+#button4Clicked {
     display: block;
 }
 .artikkeltype {
@@ -35,10 +38,6 @@
 #second {
     display: none;
 }
-#secondColumn {
-    flex-direction: column;
-    align-content: center;
-}
 #secondColumn>* { 
     border-bottom: 1px solid #fed049; 
     justify-self: space-between;
@@ -46,17 +45,18 @@
 }
 #secondClicked {
     display: flex;
+    justify-content: space-between;
 }
-#button4 {
+#button2 {
     display: none;
 }
-#button3Clicked {
+#button1Clicked {
     display: none;
 }
-#button4Clicked {
+#button2Clicked {
     display: flex;
     flex-direction: row;
 }
-#button3 {
+#button1 {
     display: flex;
 }
