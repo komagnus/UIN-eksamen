@@ -48,7 +48,6 @@ export const AllArticles = styled.article`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    ${props => props.changeView ? 'row' : 'column'}
 `;
 export const EkstraArticles = styled.article `
     color: #eeeeee;
@@ -59,7 +58,9 @@ export const EkstraArticles = styled.article `
 `;
 export const PreviewArticle = styled.article`
     padding: 10px;
+    border: 1px solid black;
 `;
+
 export const Button = styled.button`
     background-color: #fed049;
     width: fit-content;

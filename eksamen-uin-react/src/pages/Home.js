@@ -6,6 +6,8 @@ import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
 import sanityClient from "../utils/client.js";
 import '../styles/Style.css';
+import { getArticles } from '../utils/articleservice';
+import Extraposts from "../components/extraposts";
 
 
 
@@ -13,6 +15,13 @@ const Home = () => {
     const [postData, setPost] = useState(null);
     const [RelevantPostData, setRelevantPost] = useState(null);
     const [postData2, setPost2] = useState(null);
+    const [morePostData, setmMorePostData] = useState([]);
+
+    const GetMorePostData = async() => {
+        const ekstraPosts = await getArticles();
+        setmMorePostData(ekstraPosts)
+    }
+
 
     const handleClick1 = () => {
         document.getElementById("second").id ="secondClicked"
@@ -74,6 +83,7 @@ const Home = () => {
         .then((data) => setPost(data))
         .catch(console.error);
     }, [] );
+
     useEffect(() => {
         sanityClient
         .fetch(`*[_type == "post" && featured != true ][0..19] | order(publishedAt desc){
@@ -92,6 +102,7 @@ const Home = () => {
         .then((data) => setPost2(data))
         .catch(console.error);
     }, [] );
+    
     return (
         <>
         <Main>
@@ -153,33 +164,8 @@ const Home = () => {
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}
+                        {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} />) : null}
                         </AllArticles>
-                        <EkstraArticles id="second">
-                        {postData2 && postData2.map((post, index) => (
-                            <PreviewArticle>
-                                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                                    <span  
-                                        key={index} >
-                                        <img style={{height: "200px", width: "300px"}}
-                                        src={post.mainImage.asset.url} 
-                                        alt={post.mainImage.alt}
-                                        />
-                                    </span>
-                                </Link>
-                                <TittelWrapper>
-                                    <h3>{post.title}</h3>
-                                    <p className="artikkeltype">
-                                        {post.typeartikkel}
-                                    </p>
-                                </TittelWrapper>
-                                <p>
-                                    {post.ledetekst}
-                                </p>
-                                
-                                <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
-                            </PreviewArticle>
-                        ))}
-                        </EkstraArticles>
                         <MoreButton id="button1" onClick={handleClick1}>Se mer</MoreButton>
                         <MoreButton id="button2" onClick={handleClick2}>Se mindre</MoreButton>
                         <Button id ="button3" onClick={handleClick3}>Endre visning </Button>
