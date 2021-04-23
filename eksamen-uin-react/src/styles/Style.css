@@ -35,6 +35,15 @@
 #second {
     display: none;
 }
+#secondColumn {
+    flex-direction: column;
+    align-content: center;
+}
+#secondColumn>* { 
+    border-bottom: 1px solid #fed049; 
+    justify-self: space-between;
+    align-self: center;
+}
 #secondClicked {
     display: flex;
 }

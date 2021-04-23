@@ -7,7 +7,7 @@ import '../styles/SinglePost.css';
 import Header from '../components/header';
 import { AllContent, Main, } from "../styles/Style";
 import Footer from '../components/footer';
-import Artikkelnavigasjon from "../components/Artikkelnavigasjon.js";
+import Artikkelnavigasjon from "../components/artikkelnavigasjon.js";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {

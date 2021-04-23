@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 import sanityClient from "../../utils/client.js";
 import '../../styles/Artikkelside.css';
 import Header from "../../components/header"
-import Artikkelnavigasjon from "../Artikkelnavigasjon.js";
-
+import Artikkelnavigasjon from "../artikkelnavigasjon.js";
 export default function Post() {
    
     const [postData, setPost] = useState(null);
