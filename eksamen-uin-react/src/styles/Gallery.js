@@ -1,12 +1,19 @@
 import styled from "styled-components";
-export const galleryContent = styled.section`
+export const GalleryContent = styled.section`
     display:flex;
     justify-content: space-between;
-    padding-bottom:30px;
+    padding-bottom:3%;
+    padding-top: 3%;
     flex-wrap: wrap;
-    & > .hoved {
+    .hoved {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    img {
+        width: 30%;
+        height: 30%;
+        padding-bottom:2%
     }
 `;
