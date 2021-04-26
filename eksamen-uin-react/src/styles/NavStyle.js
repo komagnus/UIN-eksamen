@@ -11,7 +11,6 @@ export const NavContent = styled.ul`
     display: flex;
     list-style-type: none;
     justify-content:space-around;
-    justify-conent:center;
 `;
 
 export const NavContentItem = styled.li`
