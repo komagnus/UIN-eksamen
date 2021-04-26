@@ -7,7 +7,7 @@ const Extraposts = ({ title, mainImage, typeartikkel, ledetekst, slug }) => {
     return (
         <>
         <PreviewArticle>
-            <Link to={"/post/" + slug.current} key={slug.current}>
+            <Link to={"/post/" + slug.current} key={slug.current + 'extra'}>
                     <span >
                     <img style={{height: "200px", width: "300px"}}
                     src={mainImage.asset.url} 

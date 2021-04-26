@@ -32,12 +32,12 @@ export default function About() {
                     <GalleryContent>
                     
                     <h1>Galleri</h1>
-                    <div className="hoved">
+                    <div className="hoved" >
                     {galleryData && galleryData.map((gallery, index) => (    
                                      
                         
 
-                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse}/>
+                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse} key={gallery.eskrivelse}/>
 
                         
 

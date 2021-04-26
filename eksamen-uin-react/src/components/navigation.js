@@ -25,20 +25,20 @@ export default function Navigation() {
         {navigationListData && navigationListData.map((navigationList, index) => (                  
 
             <NavContent>
-                <NavContentItem>
-                    <NavLink to="/NavigasjonAlle" activeClassName="active">{navigationList.navigationname1}</NavLink> 
+                <NavContentItem key={navigationList.navigationname1 + 'nav'}>
+                    <NavLink to="/NavigasjonAlle" activeClassName="active" >{navigationList.navigationname1}</NavLink> 
                 </NavContentItem>
 
-                <NavContentItem>
-                <NavLink to="/omOss" activeClassName="active">{navigationList.navigationname2}</NavLink> 
+                <NavContentItem key={navigationList.navigationname2 + 'nav'}>
+                <NavLink to="/omOss" activeClassName="active" >{navigationList.navigationname2}</NavLink> 
                </NavContentItem>
 
-                <NavContentItem>
-                    <NavLink to="/kontakt" activeClassName="active">{navigationList.navigationname3}</NavLink> 
+                <NavContentItem key={navigationList.navigationname3 + 'nav'}>
+                    <NavLink to="/kontakt" activeClassName="active" >{navigationList.navigationname3}</NavLink> 
                 </NavContentItem>
 
-                <NavContentItem>
-                    <NavLink to="/galleri" activeClassName="active">{navigationList.navigationname4}</NavLink> 
+                <NavContentItem key={navigationList.navigationname4 + 'nav'}>
+                    <NavLink to="/galleri" activeClassName="active" >{navigationList.navigationname4}</NavLink> 
                 </NavContentItem> 
                        
            </NavContent>

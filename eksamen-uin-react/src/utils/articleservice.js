@@ -1,4 +1,4 @@
-import sanityClient from './client.js'
+import client from "./articleClient";
 
 const articleFields = `
     title, 
@@ -13,10 +13,10 @@ const articleFields = `
         alt} 
 `;
 
-export const getArticles = async() => {
-    const data = await sanityClient.fetch(
-      `*[_type == "post" && featured != ["10..20"]{${articleFields}}`
-    );
+export const getArticles = async () => {
+    const data = await client.fetch(
+      `*[_type == "post" && featured != true]["10..20"]{${articleFields}}`,
+      );
     return data;
   };
   
