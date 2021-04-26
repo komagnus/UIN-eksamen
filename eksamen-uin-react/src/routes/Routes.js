@@ -45,9 +45,6 @@ const Routes = () => (
                 <SinglePost />
             </Route>
 
-
-
-
             <Route exact path="/NavigasjonAlle">
             <NavigasjonAlle />
             </Route>
