@@ -14,9 +14,6 @@ export const NavContent = styled.ul`
 `;
 
 export const NavContentItem = styled.li`
-
-&:first-child {
-}
     & > a {
         color: #810034;
         font-size: 1.3vw;
