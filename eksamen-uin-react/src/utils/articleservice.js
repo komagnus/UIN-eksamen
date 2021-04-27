@@ -2,10 +2,10 @@ import client from "./articleClient";
 
 const articleFields = `
     title, 
-    'slug': slug.current ,
+    'slug': slug.current,
     ledetekst,
     typeartikkel,
-    mainImage {
+    'mainImage': mainImage{
         asset->{
             _id,
              url
@@ -13,11 +13,11 @@ const articleFields = `
         alt} 
 `;
 
-export const getArticles = async (slug) => {
+export const getArticles = async (end=12) => {
     const data = await client.fetch(
-      `*[_type == "post" && featured != true &&slug.current == $slug]["10..20"]{${articleFields}}`,
-      { slug }
+      `*[_type == "post" && featured != true][10..$end]{${articleFields}}`,
+      {end}
       );
     return data;
-  };
+};
   

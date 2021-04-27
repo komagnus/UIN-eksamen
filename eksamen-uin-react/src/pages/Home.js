@@ -20,14 +20,13 @@ const Home = () => {
     
 
     const GetMorePostData = async() => {
-        const ekstraPosts = await getArticles();
+        const ekstraPosts = await getArticles(20);
         setMorePostData(ekstraPosts)
     }
-
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
     }
-    
+
 
     useEffect(()=> {
         sanityClient.fetch(`*[_type == "post" && featured == true] {
@@ -126,7 +125,7 @@ const Home = () => {
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}
-                            {morePostData?.length > 0 ? morePostData.map((post) => <Extraposts key={post.slug}  {...post} />) : null}
+                        {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} />) : null}
                         </AllArticles>
                         <MoreButton onClick={GetMorePostData}>Se mer</MoreButton>
                         <Button onClick={changeView}>Endre Visning</Button>

@@ -7,14 +7,14 @@ const Extraposts = ({ title, mainImage, typeartikkel, ledetekst, slug }) => {
     return (
         <>
         <PreviewArticle>
-            <Link to={"/post/" + slug.current} key={slug.current + 'extra'}>
+            <Link to={"/post/" + slug} key={slug + 'extra'}>
                     <span >
                     <img style={{height: "200px", width: "300px"}}
                     src={mainImage.asset.url} 
                     alt={mainImage.alt}
                     />
              </span>
-            </Link>
+            </Link> 
             <TittelWrapper>
                 <h3>{title}</h3>
                 <p className="artikkeltype">
@@ -25,7 +25,7 @@ const Extraposts = ({ title, mainImage, typeartikkel, ledetekst, slug }) => {
                     {ledetekst}
                 </p>
                                 
-            <Link to={"/post/" + slug.current} key={slug.current}><p>Les mer</p></Link>
+            <Link to={"/post/" + slug} key={slug}><p>Les mer</p></Link>
         </PreviewArticle>
         </>
     )
