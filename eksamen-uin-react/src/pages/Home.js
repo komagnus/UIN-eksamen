@@ -23,7 +23,7 @@ const Home = () => {
     
 
     const GetMorePostData = async() => {
-        const ekstraPosts = await getArticles();
+        const ekstraPosts = await getArticles(20);
         setMorePostData(ekstraPosts)
     }
     const changeView = () => {

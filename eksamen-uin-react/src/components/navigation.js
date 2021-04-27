@@ -21,24 +21,24 @@ export default function Navigation() {
 
     return (
 
-        <NavStyle>
+        <NavStyle key={'navstyle'}>
         {navigationListData && navigationListData.map((navigationList, index) => (                  
 
-            <NavContent>
-                <NavContentItem key={navigationList.navigationname1 + 'nav'}>
-                    <NavLink to="/NavigasjonAlle" activeClassName="active" >{navigationList.navigationname1}</NavLink> 
+            <NavContent key={'nav1ContentItem'}>
+                <NavContentItem key={'nav1ContentItem'}>
+                    <NavLink to="/NavigasjonAlle" activeClassName="active" key={"navlink1"} >{navigationList.navigationname1}</NavLink> 
                 </NavContentItem>
 
-                <NavContentItem key={navigationList.navigationname2 + 'nav'}>
-                <NavLink to="/omOss" activeClassName="active" >{navigationList.navigationname2}</NavLink> 
+                <NavContentItem key={'nav2ContentItem'}>
+                <NavLink to="/omOss" activeClassName="active" key={"navlink2"} >{navigationList.navigationname2}</NavLink> 
                </NavContentItem>
 
-                <NavContentItem key={navigationList.navigationname3 + 'nav'}>
-                    <NavLink to="/kontakt" activeClassName="active" >{navigationList.navigationname3}</NavLink> 
+                <NavContentItem key={'nav3ContentItem'}>
+                    <NavLink to="/kontakt" activeClassName="active" key={"navlink3"} >{navigationList.navigationname3}</NavLink> 
                 </NavContentItem>
 
-                <NavContentItem key={navigationList.navigationname4 + 'nav'}>
-                    <NavLink to="/galleri" activeClassName="active" >{navigationList.navigationname4}</NavLink> 
+                <NavContentItem key={'nav4ContentItem'}>
+                    <NavLink to="/galleri" activeClassName="active" key={"navlink4"} >{navigationList.navigationname4}</NavLink> 
                 </NavContentItem> 
                        
            </NavContent>
