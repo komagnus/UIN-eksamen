@@ -80,7 +80,7 @@ const Home = () => {
                                     <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                                         <span key={index + 'home'} >
                                             <img className={"hovedbilde"}
-                                            src={post.mainImage.asset.url} 
+                                            src={urlFor(post.mainImage.asset.url).format('webp').url()} 
                                             alt={post.mainImage.alt}
                                             />
                                         </span>
