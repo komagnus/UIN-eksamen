@@ -16,6 +16,7 @@ export const KontaktossWrapper = styled.section`
 `;
 export const Kontaktinfocontent = styled.section`
     display: flex;
+    color: white;
     justify-content: center;
     align-items:center;
     justify-content:space-around;
@@ -50,6 +51,7 @@ export const KontaktossSkjemaWrapper = styled.section`
 `;
 export const KontaktossSkjema = styled.section`
     display: flex;
+    color: white;
     flex-direction: column;
     align-items:center;
     width 80%; 
