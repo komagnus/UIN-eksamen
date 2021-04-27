@@ -52,6 +52,7 @@ const Contact = () => {
                                 <ContactForm loading={loading} onSubmit={onSubmit}/>
                                 {error ? <p>{error}</p> : null}
                                 {success ? <p>Din melding er sendt!</p> : null}
+                                
                             </KontaktossSkjema>
                         </KontaktossSkjemaWrapper>
                         <KontaktossNyhetsbrevWrapper>

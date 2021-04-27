@@ -8,8 +8,11 @@ import sanityClient from "../utils/client.js";
 import '../styles/Style.css';
 import { getArticles } from '../utils/articleservice';
 import Extraposts from "../components/extraposts";
-
-
+import imageUrlBuilder from "@sanity/image-url";
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+    return builder.image(source)
+}
 
 const Home = () => {
     const [postData, setPost] = useState(null);
@@ -107,7 +110,7 @@ const Home = () => {
                                     <span  
                                         key={index + 'home'} >
                                         <img style={{height: "200px", width: "300px"}}
-                                        src={post.mainImage.asset.url} 
+                                        src={urlFor(post.mainImage.asset.url).format('webp').url()}
                                         alt={post.mainImage.alt}
                                         />
                                     </span>
