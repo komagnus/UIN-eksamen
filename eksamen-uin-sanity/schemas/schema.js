@@ -7,6 +7,8 @@ import navigationList from './navigationList';
 import footerkontakt from './footerkontakt';
 import footernavigasjon from './footernavigasjon';
 import gallery from './documents/gallery';
+import navigationListHeader from './navigationListHeader';
+import contact from './documents/contact';
 
 
 export default createSchema({
@@ -19,5 +21,7 @@ export default createSchema({
     footerkontakt,
     footernavigasjon,
     gallery,
+    navigationListHeader,
+    contact
   ]),
 })

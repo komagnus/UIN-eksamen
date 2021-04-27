@@ -1,5 +1,6 @@
 import Header from '../components/header'
 import { AllContent,  Main } from "../styles/Style";
+import {GalleryContent} from '../styles/Gallery'
 import Footer from '../components/footer';
 import sanityClient from "../utils/client.js";
 import imageUrlBuilder from "@sanity/image-url";
@@ -28,25 +29,24 @@ export default function About() {
             <AllContent>
 
                     <Header/>
-                    <h1>Galleriswasadwide</h1>
-                    {galleryData && galleryData.map((gallery, index) => (                  
-                        <div className="img"> 
+                    <GalleryContent>
+                    
+                    <h1>Galleri</h1>
+                    <div className="hoved" >
+                    {galleryData && galleryData.map((gallery, index) => (    
+                                     
+                        
 
-                        <img src={urlFor(gallery.galleryImage).url()} alt={gallery.beskrivelse}
-                        style={{height: "250px", width: "250px"}}/>
-
-                        <div>
+                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse} key={gallery.eskrivelse}/>
 
                         
-         
-        
-                        <div>
-                        
-                        </div>
-                        </div>
 
-                        </div>
+                        
+                        
+                        
                         ))}
+                        </div>
+                    </GalleryContent>
                     <Footer/>
             </AllContent>
         </Main>

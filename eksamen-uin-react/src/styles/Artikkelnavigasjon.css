@@ -1,0 +1,39 @@
+.rc_logo {
+  text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+    font-family: Poppins;
+    text-decoration: none;
+  }
+       
+    .rc_logo a { 
+    color: inherit; 
+    text-decoration: none;
+  } 
+       
+    .rc_nav {
+    overflow: hidden;
+    text-align: center;
+    z-index: 6;
+  }
+       
+    .rc_nav a {
+    display: inline-block;
+    margin-right: 4px;
+    color: #fff;
+    padding: 22px 22px;
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 18px;
+    margin-top: 30px;
+
+  }
+       
+    .rc_nav a:hover {
+        text-decoration: underline;;
+  }
+       
+    .rc_nav .icon {
+    display: none;
+  }

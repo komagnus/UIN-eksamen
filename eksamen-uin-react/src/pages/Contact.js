@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from '../components/header'
 import { AllContent, Main,} from "../styles/Style";
 import { KontaktossSide, KontaktossWrapper, Kontaktinfocontent, KontaktRingoss, KontaktossSkjema, KontaktossSkjemaWrapper,KontaktossNyhetsbrev,KontaktossNyhetsbrevWrapper } from "../styles/ContactStyle"
 import Footer from '../components/footer';
-const  handleClick = () => {
-    console.log("Clicked")
-}
+import ContactForm from "../components/contactForm";
+import { createContact } from "../utils/contactService";
+
 const Contact = () => {
 
+    const [loading, setLoading] = useState('false');
+    const [error, setError] = useState('false');
+    const [success, setSuccess] = useState('false');
+
+    const onSubmit = async (data) => {
+        
+        setLoading(true);
+        setError(false);
+        setSuccess(false);
+        try {
+            await createContact(data);
+            setSuccess(true);
+        } catch (error) {
+            setError(error.message);
+            
+        } finally {
+            setLoading(false);
+        }
+
+    };
     return (
         <>
         <Main>
@@ -29,9 +49,9 @@ const Contact = () => {
                         <KontaktossSkjemaWrapper>
                             <KontaktossSkjema>
                                 <h1>Hva gjelder det?</h1>
-                                <p>Dropdown</p>
-                                <textarea placeholder="Skriv en kommentar her"></textarea>
-                                <button onClick={handleClick}>Send inn</button>
+                                <ContactForm loading={loading} onSubmit={onSubmit}/>
+                                {error ? <p>{error}</p> : null}
+                                {success ? <p>Din melding er sendt!</p> : null}
                             </KontaktossSkjema>
                         </KontaktossSkjemaWrapper>
                         <KontaktossNyhetsbrevWrapper>

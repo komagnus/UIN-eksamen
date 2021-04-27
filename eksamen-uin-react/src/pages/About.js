@@ -19,6 +19,7 @@ export default function About() {
         sanityClient.fetch(`*[_type == "author" && sjef != true ]{
         name,
         bio,
+        rolle,
         "authorImage": image.asset->url
         }`
         )
@@ -30,6 +31,7 @@ export default function About() {
         sanityClient.fetch(`*[_type == "author" && sjef == true ]{
         name,
         bio,
+        rolle,
         "authorImage": image.asset->url
         }`
         )
@@ -45,13 +47,14 @@ export default function About() {
                 <Header/>
                     <BossContent>
                     {bossData && bossData.map((author, index) => (                  
-                        <div className="hoved"> 
+                        <div className="hoved" key={author.name}> 
                             <img src={urlFor(author.authorImage).url()} alt={author.name}
                             style={{height: "250px", width: "250px"}}/>
 
                             
                             <div>
                                 <h1> {author.name} </h1>
+                                <h2>{author.rolle}</h2>
                                 <div>
                                 <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
                                 </div>
@@ -61,7 +64,7 @@ export default function About() {
                     </BossContent>
                     <AboutContent>
                         {authorData && authorData.map((author, index) => (                  
-                        <div className="hoved"> 
+                        <div className="hoved" key={author.name}> 
 
                         <img src={urlFor(author.authorImage).url()} alt={author.name}
                         style={{height: "250px", width: "250px"}}/>
@@ -69,6 +72,7 @@ export default function About() {
                         <div>
 
                         <h1> {author.name} </h1>
+                        <h2> {author.rolle}</h2>
          
         
                         <div>

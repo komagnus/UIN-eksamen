@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-import sanityClient from "../utils/client.js";
-import '../styles/Artikkelside.css';
-import Header from "../components/header"
-import Artikkelnavigasjon from "../components/artikkelnavigasjon.js";
-
+import sanityClient from "../../utils/client.js";
+import '../../styles/Artikkelside.css';
+import Header from "../../components/header"
+import Artikkelnavigasjon from "../artikkelnavigasjon.js";
 export default function Post() {
    
     const [postData, setPost] = useState(null);
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && publishedAt >= ""] | order(publishedAt) {            
+        .fetch(`*[_type == "post" && typeartikkel == "Nyheter"] | order(publishedAt desc) {            
             title,
             slug,
             mainImage {
@@ -35,7 +34,7 @@ export default function Post() {
         <section>
         <Header/>
 
-        <h1 className="sideoverskrift"> Artikkelsiden </h1>
+        <h1 className="sideoverskrift"> Nyheter - </h1>
 
         <Artikkelnavigasjon />
 
