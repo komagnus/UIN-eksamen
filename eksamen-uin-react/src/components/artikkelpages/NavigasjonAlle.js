@@ -5,6 +5,7 @@ import '../../styles/Artikkelside.css';
 import Header from "../../components/header"
 import Artikkelnavigasjon from "../artikkelnavigasjon.js";
 import imageUrlBuilder from "@sanity/image-url";
+import { Main, AllContent } from "../../styles/Style";
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -36,7 +37,8 @@ export default function Post() {
     return (
  
 
-        <main className="hovedarket">
+        <Main>
+        <AllContent>
         <section>
         <Header/>
 
@@ -90,7 +92,8 @@ export default function Post() {
         </div>
 
         </section>
-        </main>
+        </AllContent>
+        </Main>
 
         
     )
