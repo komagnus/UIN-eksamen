@@ -5,6 +5,7 @@ import '../../styles/Artikkelside.css';
 import Header from "../../components/header"
 import Artikkelnavigasjon from "../artikkelnavigasjon.js";
 import imageUrlBuilder from "@sanity/image-url";
+import { Main, AllContent } from "../../styles/Style";
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -36,7 +37,8 @@ export default function Post() {
     return (
  
 
-        <main className="hovedarket">
+        <Main>
+        <AllContent>
         <section>
         <Header/>
 
@@ -48,7 +50,7 @@ export default function Post() {
 
 {postData && postData.map((post, index) => (
 
-        <article>
+        <article key={post.slug.current}>
         
         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
 
@@ -63,7 +65,7 @@ export default function Post() {
         <div className="row">
         <div className="column" style={{float: "left"}}>
 
-        <img style={{height: "250px", width: "250px;"}}
+        <img style={{height: "250px"}}
         
         src={urlFor(post.mainImage.asset.url).format('webp').url()} 
         alt={post.mainImage.alt} />
@@ -90,7 +92,8 @@ export default function Post() {
         </div>
 
         </section>
-        </main>
+        </AllContent>
+        </Main>
 
         
     )

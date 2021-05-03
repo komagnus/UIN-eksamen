@@ -11,7 +11,7 @@ function urlFor(source) {
     return builder.image(source)
 }
 
-export default function About() {
+export default function Galleri() {
     const [galleryData, setGallery] = useState(null) ;
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function About() {
                                      
                         
 
-                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse} key={gallery.eskrivelse}/>
+                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse} key={gallery.beskrivelse}/>
 
                         
 

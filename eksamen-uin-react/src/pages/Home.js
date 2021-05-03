@@ -1,14 +1,15 @@
 import Footer from "../components/footer";
 import Header from "../components/header"
 import { Main, AllContent } from "../styles/Style";
-import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst, Button, MoreButton, TittelWrapper } from "../styles/HomeStyle";
+import { AllArticles, RelevantArticle, ArticleContent, PreviewArticle, RelevantArticlePreview, RelevantImgPreview, RelevantTextPreview, RelevantTekst, Button, MoreButton, TittelWrapper, ButtonsWrapper } from "../styles/HomeStyle";
 import React, { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import sanityClient from "../utils/client.js";
 import '../styles/Style.css';
 import { getArticles } from '../utils/articleservice';
 import Extraposts from "../components/extraposts";
 import imageUrlBuilder from "@sanity/image-url";
+import ArtikkelNavHome from '../components/artikkelNavHome';
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -20,11 +21,12 @@ const Home = () => {
     const [morePostData, setMorePostData] = useState([]);
     const [flexDirection, setFlexDirection] = useState(false);
 
+
     
 
     const GetMorePostData = async() => {
         const ekstraPosts = await getArticles(20);
-        setMorePostData(ekstraPosts)
+        setMorePostData(ekstraPosts);
     }
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
@@ -72,9 +74,10 @@ const Home = () => {
         <Main>
             <AllContent>
                     <Header/>
+                    <ArtikkelNavHome />
                     <ArticleContent>
                         {RelevantPostData && RelevantPostData.map((post, index) => (
-                        <RelevantArticle>
+                        <RelevantArticle key="RelevantArticle">
                             <RelevantArticlePreview>
                                 <RelevantImgPreview>
                                     <Link to={"/post/" + post.slug.current} key={post.slug.current}>
@@ -91,9 +94,9 @@ const Home = () => {
                                     <h3>
                                         {post.title}
                                     </h3>
-                                    <p className="artikkeltype">
+                                    <Link className="artikkeltype" to={"/navigasjon" + post.typeartikkel} >
                                         {post.typeartikkel}
-                                    </p>
+                                    </Link>
                                     </TittelWrapper>
                                     <RelevantTekst>
                                         {post.ledetekst}
@@ -103,9 +106,12 @@ const Home = () => {
                             </RelevantArticlePreview>
                         </RelevantArticle>
                         ))}
+                        <ButtonsWrapper>
+                            <Button onClick={changeView}>Visning</Button>
+                        </ButtonsWrapper>
                         <AllArticles style={{flexDirection:flexDirection}}>
                         {postData && postData.map((post, index) => (
-                            <PreviewArticle>
+                            <PreviewArticle key={"ArticlePreview" + post.slug.current}>
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current + 'home'}>
                                     <span  
                                         key={index + 'home'} >
@@ -117,9 +123,9 @@ const Home = () => {
                                 </Link>
                                 <TittelWrapper>
                                     <h3>{post.title}</h3>
-                                    <p className="artikkeltype">
+                                    <Link className="artikkeltype" to={"/navigasjon" + post.typeartikkel} >
                                         {post.typeartikkel}
-                                    </p>
+                                    </Link>
                                 </TittelWrapper>
                                 <p>
                                     {post.ledetekst}
@@ -128,10 +134,11 @@ const Home = () => {
                                 <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
                             </PreviewArticle>
                         ))}
-                        {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} />) : null}
+                        {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} key ={post.slug + "Wrapper"}/>) : null}
                         </AllArticles>
-                        <MoreButton onClick={GetMorePostData}>Se mer</MoreButton>
-                        <Button onClick={changeView}>Endre Visning</Button>
+                        <ButtonsWrapper>
+                            <MoreButton onClick={GetMorePostData} >Flere Artikler</MoreButton>
+                        </ButtonsWrapper>
                     </ArticleContent>
                     <Footer/>
             </AllContent>

@@ -59,23 +59,35 @@ export const EkstraArticles = styled.article `
 export const PreviewArticle = styled.article`
     padding: 10px;
     border: 1px solid black;
+    margin-bottom: 5%;
+    min-width: 22%
 `;
 
 export const Button = styled.button`
     background-color: #fed049;
     width: fit-content;
-    justify-self: end;
+    align-self: center;
+    font-size: 1vw;
+    padding: 0.3em 1.5em;
 `;
 export const MoreButton = styled.button`
     background-color: #222831;
     border: 1px solid #fed049;
+    font-size: 1vw;
     color: #fed049;
     width: fit-content;
-    padding: 0.3em 1em;
+    padding: 0.5em 2em;
     justify-self: center;
+    align-self: center;
     border-radius: 2%;
 `;
 export const TittelWrapper = styled.section `
     display: flex;
     flex-direction: row;
+`;
+export const ButtonsWrapper = styled.section `
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5%;
 `;

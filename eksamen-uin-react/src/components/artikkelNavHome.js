@@ -1,10 +1,9 @@
-  
 import React, { useEffect, useState } from "react";
 import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
 import '../styles/Artikkelnavigasjon.css';
 
-export default function Artikkelnavigasjon() { 
+export default function ArtikkelNavHome() { 
     const [navigationListHeaderData, setNavigationListHeader] = useState(null) ;
 
     useEffect(() => {
@@ -26,17 +25,13 @@ export default function Artikkelnavigasjon() {
     return (
 
 
-        <nav className="pageNav">
+        <nav className="pageNav"> 
 
         {navigationListHeaderData && navigationListHeaderData.map((navigationListHeader, index) => (                  
-<div key="ArtikkelNavHolder"> 
-        <div className="rc_logo">                 
-        <a title="Logo" href="/NavigasjonAlle">Artikler</a>
-        </div>  
-        
-        
+<div key="NavHolder"> 
+    
         <div className="rc_nav" > 
-        <NavLink to="/NavigasjonAlle" activeClassName="active" key={navigationListHeader.navigationname1}>{navigationListHeader.navigationname1}</NavLink>
+         <NavLink to="/NavigasjonAlle" activeClassName="active" key={navigationListHeader.navigationname1}>{navigationListHeader.navigationname1}</NavLink>
          <NavLink to="/NavigasjonHelse" activeClassName="active" key={navigationListHeader.navigationname2}>{navigationListHeader.navigationname2}</NavLink> 
          <NavLink to="/NavigasjonInspirasjon" activeClassName="active" key={navigationListHeader.navigationname3}>{navigationListHeader.navigationname3}</NavLink> 
          <NavLink to="/NavigasjonNyheter" activeClassName="active" key={navigationListHeader.navigationname4}>{navigationListHeader.navigationname4}</NavLink> 
@@ -45,7 +40,7 @@ export default function Artikkelnavigasjon() {
          <NavLink to="/NavigasjonTutorials" activeClassName="active" key={navigationListHeader.navigationname7}>{navigationListHeader.navigationname7}</NavLink> 
 
         </div>
-        <span className="line"></span>
+        <span className="line" ></span>
         </div>
         
         ))}
@@ -54,3 +49,4 @@ export default function Artikkelnavigasjon() {
 
     );
 };
+

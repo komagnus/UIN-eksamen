@@ -6,22 +6,23 @@ import { PreviewArticle, TittelWrapper } from "../styles/HomeStyle";
 const Extraposts = ({ title, mainImage, typeartikkel, ledetekst, slug }) => {
     return (
         <>
-        <PreviewArticle>
+        <PreviewArticle key={title}>
             <Link to={"/post/" + slug} key={slug + 'extra'}>
-                    <span >
+                    <span key={ slug + "imgwrap"}>
                     <img style={{height: "200px", width: "300px"}}
                     src={mainImage.asset.url} 
                     alt={mainImage.alt}
+                    key={slug + "img"}
                     />
              </span>
             </Link> 
-            <TittelWrapper>
-                <h3>{title}</h3>
-                <p className="artikkeltype">
+            <TittelWrapper key={slug + "tittelwrap"}>
+                <h3 key={slug + "tittel"}>{title}</h3>
+                <p className="artikkeltype" key={slug + "artikkeltype"}>
                     {typeartikkel}
                 </p>
                     </TittelWrapper>
-                <p>
+                <p key={slug + "ledetekst"}>
                     {ledetekst}
                 </p>
                                 

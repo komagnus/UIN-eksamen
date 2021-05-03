@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import sanityClient from "../utils/client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
@@ -57,7 +57,7 @@ useEffect(() => {
         <Main>
             <AllContent>
                     <Header/>
-                    <body> 
+                    <section> 
                         <main className="hovedsiden">
 
 
@@ -71,9 +71,9 @@ useEffect(() => {
                         <div >
                         <div>
 
-                        <p className="typeartikkel">
+                        <Link className="typeartikkel" to={"/navigasjon" + singlePost.typeartikkel}>
                         {singlePost.typeartikkel}
-                        </p>
+                        </Link>
 
 
                             <img className="hovedbilde" src={singlePost.mainImage.asset.url}
@@ -122,7 +122,7 @@ useEffect(() => {
                             </div>
                             </article>
                             </main>
-                    </body>
+                    </section>
                     <Footer/>
             </AllContent>
         </Main>
