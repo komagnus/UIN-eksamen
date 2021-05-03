@@ -11,13 +11,9 @@ export const NavContent = styled.ul`
     display: flex;
     list-style-type: none;
     justify-content:space-around;
-    justify-conent:center;
 `;
 
 export const NavContentItem = styled.li`
-
-&:first-child {
-}
     & > a {
         color: #810034;
         font-size: 1.3vw;

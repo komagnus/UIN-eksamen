@@ -4,6 +4,11 @@ import sanityClient from "../../utils/client.js";
 import '../../styles/Artikkelside.css';
 import Header from "../../components/header"
 import Artikkelnavigasjon from "../artikkelnavigasjon.js";
+import imageUrlBuilder from "@sanity/image-url";
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+    return builder.image(source)
+}
 
 export default function Post() {
    
@@ -60,7 +65,7 @@ export default function Post() {
 
         <img style={{height: "250px", width: "250px;"}}
         
-        src={post.mainImage.asset.url} 
+        src={urlFor(post.mainImage.asset.url).format('webp').url()} 
         alt={post.mainImage.alt} />
 
          <h3>

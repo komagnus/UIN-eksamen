@@ -32,7 +32,7 @@ export default function Artikkelnavigasjon() {
         {navigationListHeaderData && navigationListHeaderData.map((navigationListHeader, index) => (                  
 <div> 
         <div className="rc_logo">                 
-        <a title="Logo">Artikler</a>
+        <a title="Logo" href="/NavigasjonAlle">Artikler</a>
         </div>  
         
         
