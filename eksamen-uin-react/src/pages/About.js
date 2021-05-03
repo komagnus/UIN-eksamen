@@ -49,7 +49,7 @@ export default function About() {
                     {bossData && bossData.map((author, index) => (                  
                         <div className="hoved" key={author.name}> 
                             <img src={urlFor(author.authorImage).format('webp').url()} alt={author.name}
-                            style={{height: "250px", width: "250px"}}/>
+                            style={{height: "250px", width: "250px"}} key={author.authorImage}/>
 
                             
                             <div>
@@ -67,7 +67,7 @@ export default function About() {
                         <div className="hoved" key={author.name}> 
 
                         <img src={urlFor(author.authorImage).format('webp').url()} alt={author.name}
-                        style={{height: "250px", width: "250px"}}/>
+                        style={{height: "250px", width: "250px"}} key={author.authorImage}/>
 
                         <div>
 

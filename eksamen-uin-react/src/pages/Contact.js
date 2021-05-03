@@ -76,9 +76,9 @@ const Contact = () => {
                             <KontaktRingoss>
                             {imgData && imgData.map((gallery, index) => (    
                                      
-                                    <div>
+                                    <div key={index}>
 
-                                     <img src={urlFor(imgData.contactimgImage).format('webp').url()}/>
+                                     <img src={urlFor(imgData.contactimgImage).format('webp').url()} alt="kontaktoss" key={'img'}/>
                                      
                                      </div>
                                      ))}

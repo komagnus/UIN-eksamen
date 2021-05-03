@@ -27,7 +27,7 @@ export default function Footer() {
         sanityClient.fetch(`*[_type == "footerkontakt"]{
         adresse,
         tipstelefon,
-        email,
+        epost,
         }`
         )
         .then((data) => setFooterkontakt(data))
@@ -58,7 +58,7 @@ export default function Footer() {
                 <FooterChild key={'footerchild1'}>
                     <li key={'adresse'} >{footerkontakt.adresse} </li>
                     <li key={'tlf'}>{footerkontakt.tipstelefon}</li>
-                    <li key={'email'}>{footerkontakt.email}</li>
+                    <li key={'epost'}>{footerkontakt.epost}</li>
                 </FooterChild>
                     ))}
             </FooterAdresse>

@@ -60,3 +60,7 @@
 #button1 {
     display: flex;
 }
+.artikkeltype {
+    height: fit-content;
+    padding: 3%;
+}

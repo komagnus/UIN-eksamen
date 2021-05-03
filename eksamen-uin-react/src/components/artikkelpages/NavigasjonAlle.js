@@ -50,7 +50,7 @@ export default function Post() {
 
 {postData && postData.map((post, index) => (
 
-        <article>
+        <article key={post.slug.current}>
         
         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
 
@@ -65,7 +65,7 @@ export default function Post() {
         <div className="row">
         <div className="column" style={{float: "left"}}>
 
-        <img style={{height: "250px", width: "250px;"}}
+        <img style={{height: "250px"}}
         
         src={urlFor(post.mainImage.asset.url).format('webp').url()} 
         alt={post.mainImage.alt} />
