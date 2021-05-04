@@ -47,7 +47,7 @@ export default function Post() {
 
 {postData && postData.map((post, index) => (
 
-        <article key={index}>
+        <article key={index} id="ArtikkelPreview">
         
         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
 

@@ -36,8 +36,8 @@ align-items:center;
     width:100%;
     }
 `;
-export const RelevantTekst = styled.section `
-    font-size: 10wv;
+export const RelevantTekst = styled.p `
+    font-size: 15px;
 `;
 
 export const AllArticles = styled.article`
@@ -60,7 +60,18 @@ export const PreviewArticle = styled.article`
     padding: 10px;
     border: 1px solid black;
     margin-bottom: 5%;
-    min-width: 22%
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 1700px) {
+        width: 28%;
+    }
+    @media (max-width: 1699px) {
+        width: 40%;
+    }
+    @media (max-width: 1300px) {
+        width:100%;
+    }
 `;
 
 export const Button = styled.button`
