@@ -1,3 +1,4 @@
+  
 import React, { useEffect, useState } from "react";
 import sanityClient from "../utils/client.js";
 import { NavLink } from "react-router-dom"
@@ -53,4 +54,3 @@ export default function Artikkelnavigasjon() {
 
     );
 };
-
