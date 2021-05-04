@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Home from "../pages/Hjem.js";
+import Home from "../pages/Home.js";
 import NoMatch from "../pages/NoMatch.js";
 import Contact from '../pages/Contact.js';
 import Galleri from '../pages/Galleri.js';
