@@ -13,6 +13,8 @@ export const AllContent = styled.section`
     { grid-area: 1 / 2 / 6 / 5; }
     border: 1px solid black;
     background-color: #222831;
+    -webkit-box-shadow: 0px 0px 9px 3px #222831; 
+    box-shadow: 0px 0px 9px 3px #222831;
     @media (max-width: 768px){
         { grid-area: 1 / 1 / 6 / 6; }
         }
