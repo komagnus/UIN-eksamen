@@ -40,7 +40,7 @@ export default function Post() {
         <section>
         <Header/>
 
-        <h1 className="sideoverskrift"> Tips&tricks - </h1>
+        <h1 className="sideoverskrift"> Tips&tricks - Artikler</h1>
 
         <Artikkelnavigasjon />
 

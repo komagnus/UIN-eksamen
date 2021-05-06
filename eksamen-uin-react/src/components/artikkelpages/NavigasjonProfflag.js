@@ -40,7 +40,7 @@ export default function Post() {
         <section>
         <Header/>
 
-        <h1 className="sideoverskrift"> Profflag - </h1>
+        <h1 className="sideoverskrift"> Profflag - Artikler</h1>
 
         <Artikkelnavigasjon />
 

@@ -21,7 +21,6 @@ const ContactForm = ({ loading, onSubmit }) => {
                 onChange={(event)=> setTitle(event.target.value)} 
                 value={title}
                 type="text" 
-                id="title" 
                 placeholder="Hva tipser du om?" 
                 required>
 
@@ -30,7 +29,7 @@ const ContactForm = ({ loading, onSubmit }) => {
             <label htmlFor="content">
                 Innhold:
                 </label>
-                <textarea id="content"onChange={(event)=> setContent(event.target.value)} value={content} type="text" id="content" rows="10" cols="50" placeholder="Skriv beskjed her..." required></textarea>
+                <textarea id="content"onChange={(event)=> setContent(event.target.value)} value={content} type="text" rows="10" cols="50" placeholder="Skriv beskjed her..." required></textarea>
             
             <button type="submit">{loading ? 'Sender...' : 'Send'}</button>
             </TipsSkjema>

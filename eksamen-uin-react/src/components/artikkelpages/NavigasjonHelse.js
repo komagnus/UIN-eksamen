@@ -40,7 +40,7 @@ export default function Post() {
         <section>
         <Header/>
 
-        <h1 className="sideoverskrift"> Helse - </h1>
+        <h1 className="sideoverskrift"> Helse - Artikler</h1>
 
         <Artikkelnavigasjon />
 
