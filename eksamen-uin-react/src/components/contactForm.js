@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TipsSkjema} from '../styles/ContactStyle';
 
 const ContactForm = ({ loading, onSubmit }) => {
     const [title, setTitle] = useState('');
@@ -11,9 +12,12 @@ const ContactForm = ({ loading, onSubmit }) => {
 
     return(
         <form onSubmit={handleSubmit} method="POST">
-            <label id="title">
+            <TipsSkjema>
+            <label htmlFor="title">
                 Tittel:
+                </label>
                 <input 
+                id="title"
                 onChange={(event)=> setTitle(event.target.value)} 
                 value={title}
                 type="text" 
@@ -22,12 +26,14 @@ const ContactForm = ({ loading, onSubmit }) => {
                 required>
 
                 </input>
-            </label>
-            <label id="content">
+            
+            <label htmlFor="content">
                 Innhold:
-                <textarea onChange={(event)=> setContent(event.target.value)} value={content} type="text" id="content" rows="10" cols="60" placeholder="Skriv beskjed her..." required></textarea>
-            </label>
+                </label>
+                <textarea id="content"onChange={(event)=> setContent(event.target.value)} value={content} type="text" id="content" rows="10" cols="50" placeholder="Skriv beskjed her..." required></textarea>
+            
             <button type="submit">{loading ? 'Sender...' : 'Send'}</button>
+            </TipsSkjema>
         </form>
     )
 }

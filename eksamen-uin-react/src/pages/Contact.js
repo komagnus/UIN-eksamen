@@ -14,9 +14,9 @@ function urlFor(source) {
 
 const Contact = () => {
     const [footerkontaktData, setFooterkontakt] = useState(null) ;
-    const [loading, setLoading] = useState('false');
-    const [error, setError] = useState('false');
-    const [success, setSuccess] = useState('false');
+    const [loading, setLoading] = useState(null);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
     const [imgData, setImg] = useState(null) ;
 
     useEffect(() => {
@@ -86,7 +86,7 @@ const Contact = () => {
                         </KontaktossWrapper>
                         <KontaktossSkjemaWrapper>
                             <KontaktossSkjema>
-                                <h1>Hva gjelder det?</h1>
+                                <h1>Send tips og forslag her!</h1>
                                 <ContactForm loading={loading} onSubmit={onSubmit}/>
                                 {error ? <p>{error}</p> : null}
                                 {success ? <p>Din melding er sendt!</p> : null}

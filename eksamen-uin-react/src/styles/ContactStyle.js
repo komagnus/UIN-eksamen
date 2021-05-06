@@ -96,3 +96,8 @@ export const KontaktossNyhetsbrev = styled.section`
         width:20%;
     }
 `;
+export const TipsSkjema = styled.section`
+display:flex;
+flex-direction: column;
+justify-content: center;
+`;
