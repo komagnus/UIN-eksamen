@@ -35,6 +35,11 @@ export default {
         name: 'navigationname4',
         type: 'string'
       },
+      {
+        title: 'Navn på den femte navigasjonen',
+        name: 'navigationname5',
+        type: 'string'
+      },
       ]
 
       

@@ -14,6 +14,8 @@ import NavigasjonNyheter from '../components/artikkelpages/NavigasjonNyheter.js'
 import NavigasjonProfflag from '../components/artikkelpages/NavigasjonProfflag.js';
 import NavigasjonTipsogtricks from '../components/artikkelpages/NavigasjonTipsogtricks.js';
 import NavigasjonTutorials from '../components/artikkelpages/NavigasjonTutorials.js';
+import Kurs from '../pages/Kurs.js';
+import GratisKurs from '../components/kurs/gratisKurs.js';
 
 
 
@@ -44,6 +46,9 @@ const Routes = () => (
             <Route path="/post/:slug">
                 <SinglePost />
             </Route>
+            <Route path="/kurs/:slug">
+                <GratisKurs/>
+            </Route>
 
             <Route exact path="/NavigasjonAlle">
             <NavigasjonAlle />
@@ -71,6 +76,9 @@ const Routes = () => (
 
             <Route exact path="/NavigasjonTutorials">
             <NavigasjonTutorials />
+            </Route>
+            <Route exact path="/kurs">
+                <Kurs /> 
             </Route>
             
             <Route path="*">

@@ -10,6 +10,8 @@ import gallery from './documents/gallery';
 import navigationListHeader from './navigationListHeader';
 import contact from './documents/contact';
 import contactimg from './documents/contactimg'
+import kurs from './documents/kurs';
+import paamelding from './documents/paamelding';
 
 export default createSchema({
   name: 'default',
@@ -23,6 +25,8 @@ export default createSchema({
     gallery,
     navigationListHeader,
     contact,
-    contactimg
+    contactimg,
+    kurs,
+    paamelding,
   ]),
 })

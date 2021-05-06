@@ -71,7 +71,7 @@ const Contact = () => {
                     <li key={index + 'tlf'}>{footerkontakt.tipstelefon}</li>
                     <li key={index + 'epost'}>{footerkontakt.epost}</li>
                 </div>
-                    ))}
+                    ))}cd 
                             </Kontaktinfocontent>
                             <KontaktRingoss>
                             {imgData && imgData.map((image, index) => (    

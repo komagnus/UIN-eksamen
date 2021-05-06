@@ -12,6 +12,7 @@ export default function Navigation() {
         navigationname2,
         navigationname3,
         navigationname4,
+        navigationname5,
         }`).then((data) => setNavigationList(data))
         .catch(console.error);
     }, []);
@@ -40,6 +41,9 @@ export default function Navigation() {
                 <NavContentItem key={'nav4ContentItem'}>
                     <NavLink to="/galleri" activeClassName="active" key={"navlink4"} >{navigationList.navigationname4}</NavLink> 
                 </NavContentItem> 
+                <NavContentItem key={'nav5ContentItem'}>
+                    <NavLink to="/kurs" activeClassName="active" key={"navlink5"}>{navigationList.navigationname5}</NavLink>
+                </NavContentItem>
                        
            </NavContent>
            ))}
