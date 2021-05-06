@@ -74,13 +74,13 @@ const Contact = () => {
                     ))}
                             </Kontaktinfocontent>
                             <KontaktRingoss>
-                            {imgData && imgData.map((gallery, index) => (    
+                            {imgData && imgData.map((image, index) => (    
                                      
-                                    <div key={index}>
+                                    
 
-                                     <img src={urlFor(imgData.contactimgImage).format('webp').url()} alt="kontaktoss" key={'img'}/>
+                                     <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={'img'}/>
                                      
-                                     </div>
+                                     
                                      ))}
                             </KontaktRingoss>
                         </KontaktossWrapper>
