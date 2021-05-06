@@ -4,7 +4,9 @@ import { AllContent, Main,} from "../styles/Style";
 import { KontaktossSide, KontaktossWrapper, Kontaktinfocontent, KontaktRingoss, KontaktossSkjema, KontaktossSkjemaWrapper,KontaktossNyhetsbrev,KontaktossNyhetsbrevWrapper } from "../styles/ContactStyle"
 import Footer from '../components/footer';
 import ContactForm from "../components/contactForm";
+import Subscribe from "../components/subscribe";
 import { createContact } from "../utils/contactService";
+import { createSubscribe } from "../utils/subscribeService";
 import sanityClient from "../utils/client.js";
 import imageUrlBuilder from "@sanity/image-url";
 const builder = imageUrlBuilder(sanityClient);
@@ -17,6 +19,9 @@ const Contact = () => {
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const [loading2, setLoading2] = useState(null);
+    const [error2, setError2] = useState(null);
+    const [success2, setSuccess2] = useState(null);
     const [imgData, setImg] = useState(null) ;
 
     useEffect(() => {
@@ -57,6 +62,24 @@ const Contact = () => {
         
 
     };
+    const onSubscribe = async (data) => {
+        
+        setLoading2(true);
+        setError2(false);
+        setSuccess2(false);
+        try {
+            await createSubscribe(data);
+            setSuccess2(true);
+        } catch (error2) {
+            setError2(error2.message);
+            
+        } finally {
+            setLoading2(false);
+        }
+
+        
+
+    };
     return (
         <>
         <Main>
@@ -78,7 +101,7 @@ const Contact = () => {
                                      
                                     
 
-                                     <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={'img'}/>
+                                     <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={index}/>
                                      
                                      
                                      ))}
@@ -95,8 +118,10 @@ const Contact = () => {
                         </KontaktossSkjemaWrapper>
                         <KontaktossNyhetsbrevWrapper>
                             <KontaktossNyhetsbrev>
-                                <h1>Abonner på nyhetsbrevet!</h1>
-                                <input placeholder="Din e-postadresse"></input>
+                                
+                                <Subscribe loading={loading2} onSubmit={onSubscribe}/>
+                                {error2 ? <p>{error2}</p> : null}
+                                {success2 ? <p>Du abonnerer!</p> : null}
                             </KontaktossNyhetsbrev>
                         </KontaktossNyhetsbrevWrapper>
                     </KontaktossSide>

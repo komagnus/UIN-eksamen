@@ -81,8 +81,9 @@ export const KontaktossNyhetsbrevWrapper = styled.section`
 `;
 export const KontaktossNyhetsbrev = styled.section`
     display:flex;
+    color: white;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items:center;
     width: 80%;
     border: 2px solid #FFFFFF	;
@@ -100,4 +101,16 @@ export const TipsSkjema = styled.section`
 display:flex;
 flex-direction: column;
 justify-content: center;
+`;
+export const Abonner = styled.section`
+display:flex;
+color:white;
+width: 100%;
+flex-direction: row;
+justify-content: space-around;
+& > .subform {
+    display:flex;
+    
+}
+
 `;
