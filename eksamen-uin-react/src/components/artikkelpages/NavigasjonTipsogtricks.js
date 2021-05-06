@@ -5,6 +5,8 @@ import '../../styles/Artikkelside.css';
 import Header from "../../components/header"
 import Artikkelnavigasjon from "../artikkelnavigasjon.js";
 import imageUrlBuilder from "@sanity/image-url";
+import { Main, AllContent } from "../../styles/Style";
+import { AllArticles, ArticleContent, PreviewArticle,TittelWrapper,} from "../../styles/HomeStyle";
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -33,67 +35,49 @@ export default function Post() {
    
 
     
-    return (
+        return (
  
 
-        <main className="hovedarket">
-        <section>
-        <Header/>
-
-        <h1 className="sideoverskrift"> Tips&tricks - Artikler</h1>
-
-        <Artikkelnavigasjon />
-
-        <div>
-
-{postData && postData.map((post, index) => (
-
-        <article key={index} id="ArtikkelPreview">
-        
-        <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-
-
-
-
-
-    <span  
-        
-        key={index} >
-
-        <div className="row">
-        <div className="column" style={{float: "left"}}>
-
-        <img style={{height: "250px"}}
-        
-        src={urlFor(post.mainImage.asset.url).format('webp').url()} 
-        alt={post.mainImage.alt} />
-
-         <h3>
-         {post.title}
-         </h3>
-
-
-         </div>
-         </div>
-         
-        <span >
-
-
-        </span>
-        </span>
-        </Link>
-
-        </article>
-
-))}
-
-        </div>
-
-        </section>
-        </main>
-
-        
-    )
-}
-
-
+            <Main>
+            <AllContent>
+            <ArticleContent>
+            <Header/>
+    
+            <h1 className="sideoverskrift"> Tips&tricks - Artikler</h1>
+    
+            <Artikkelnavigasjon />
+    
+            <AllArticles>
+    
+    {postData && postData.map((post, index) => (
+    
+        <PreviewArticle key={post.slug.current} id="ArtikkelPreview">
+            <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+            <span
+                key={index} >
+                <img style={{height: "250px"}}
+                src={urlFor(post.mainImage.asset.url).format('webp').url()} 
+                alt={post.mainImage.alt} 
+                />
+            </span>
+            </Link>
+             <TittelWrapper>
+             {post.title}
+             </TittelWrapper>
+    
+            </PreviewArticle>
+    
+    ))}
+    
+            </AllArticles>
+    
+            </ArticleContent>
+            </AllContent>
+            </Main>
+    
+            
+        )
+    }
+    
+    
+    

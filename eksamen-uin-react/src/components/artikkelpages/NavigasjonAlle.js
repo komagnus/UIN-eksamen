@@ -6,6 +6,7 @@ import Header from "../../components/header"
 import Artikkelnavigasjon from "../artikkelnavigasjon.js";
 import imageUrlBuilder from "@sanity/image-url";
 import { Main, AllContent } from "../../styles/Style";
+import { AllArticles, ArticleContent, PreviewArticle,TittelWrapper,} from "../../styles/HomeStyle";
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -39,59 +40,38 @@ export default function Post() {
 
         <Main>
         <AllContent>
-        <section>
+        <ArticleContent>
         <Header/>
 
         <h1 className="sideoverskrift"> Alle - Artikler</h1>
 
         <Artikkelnavigasjon />
 
-        <div>
+        <AllArticles>
 
 {postData && postData.map((post, index) => (
 
-        <article key={post.slug.current} id="ArtikkelPreview">
-        
+    <PreviewArticle key={post.slug.current} id="ArtikkelPreview">
         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-
-
-
-
-
-    <span  
-        
-        key={index} >
-
-        <div className="row">
-        <div className="column" style={{float: "left"}}>
-
-        <img style={{height: "250px"}}
-        
-        src={urlFor(post.mainImage.asset.url).format('webp').url()} 
-        alt={post.mainImage.alt} />
-
-         <h3>
-         {post.title}
-         </h3>
-
-
-         </div>
-         </div>
-         
-        <span >
-
-
-        </span>
+        <span
+            key={index} >
+            <img style={{height: "250px"}}
+            src={urlFor(post.mainImage.asset.url).format('webp').url()} 
+            alt={post.mainImage.alt} 
+            />
         </span>
         </Link>
+         <TittelWrapper>
+         {post.title}
+         </TittelWrapper>
 
-        </article>
+        </PreviewArticle>
 
 ))}
 
-        </div>
+        </AllArticles>
 
-        </section>
+        </ArticleContent>
         </AllContent>
         </Main>
 
