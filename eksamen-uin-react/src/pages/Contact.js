@@ -66,7 +66,7 @@ const Contact = () => {
                         <KontaktossWrapper>
                             <Kontaktinfocontent>
                             {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
-                <div>
+                <div key={index}>
                     <li key={index + 'adresse'} >{footerkontakt.adresse} </li>
                     <li key={index + 'tlf'}>{footerkontakt.tipstelefon}</li>
                     <li key={index + 'epost'}>{footerkontakt.epost}</li>
@@ -78,7 +78,7 @@ const Contact = () => {
                                      
                                     
 
-                                     <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={'img'}/>
+                                     <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={index}/>
                                      
                                      
                                      ))}
