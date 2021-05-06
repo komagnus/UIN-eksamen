@@ -39,6 +39,13 @@ export const KontaktRingoss = styled.section`
     justify-content:space-around;
     border: 2px solid #FFFFFF	;
     width 50%;
+    & > img {
+        width: 45%;
+        height: 80%;
+        padding-top: 3%;
+        
+        
+       
     }
 `;
 

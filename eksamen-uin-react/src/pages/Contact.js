@@ -97,6 +97,7 @@ const Contact = () => {
                     ))}
                             </Kontaktinfocontent>
                             <KontaktRingoss>
+                            
                             {imgData && imgData.map((image, index) => (    
                                      
                                     
@@ -105,6 +106,7 @@ const Contact = () => {
                                      
                                      
                                      ))}
+                                     
                             </KontaktRingoss>
                         </KontaktossWrapper>
                         <KontaktossSkjemaWrapper>
