@@ -47,7 +47,7 @@ export const PreviewKurs = styled.article`
         width:100%;
     }
 `;
-export const KursTekst = styled.p`
+export const KursTekst = styled.div`
     max-width: 60%;
 `;
 export const PaameldingSkjema = styled.section`
@@ -70,4 +70,8 @@ export const PaameldingSkjema = styled.section`
         height: 30%;
         width:50%;
     }
+`;
+export const KursformStyle = styled.section `
+    display: flex;
+    flex-direction: column;
 `;

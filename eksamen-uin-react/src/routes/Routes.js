@@ -15,7 +15,7 @@ import NavigasjonProfflag from '../components/artikkelpages/NavigasjonProfflag.j
 import NavigasjonTipsogtricks from '../components/artikkelpages/NavigasjonTipsogtricks.js';
 import NavigasjonTutorials from '../components/artikkelpages/NavigasjonTutorials.js';
 import Kurs from '../pages/Kurs.js';
-import GratisKurs from '../components/kurs/gratisKurs.js';
+import FullKurs from '../components/kurs/FullKurs.js';
 
 
 
@@ -47,7 +47,7 @@ const Routes = () => (
                 <SinglePost />
             </Route>
             <Route path="/kurs/:slug">
-                <GratisKurs/>
+                <FullKurs/>
             </Route>
 
             <Route exact path="/NavigasjonAlle">

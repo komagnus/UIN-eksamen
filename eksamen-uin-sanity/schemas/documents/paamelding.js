@@ -4,7 +4,7 @@ const paamelding = {
     type: 'document',
     fields: [
         {
-            name: 'kursnavn',
+            name: 'title',
             title: 'Kurs:',
             type: 'string',
         },
@@ -26,7 +26,7 @@ const paamelding = {
     ],
     preview: {
         select: {
-            name:'epost',
+            name:'title',
             created: '_createdAt'
         },
         prepare({name,created}) {

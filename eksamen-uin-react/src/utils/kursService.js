@@ -1,13 +1,11 @@
 import client from "./client";
 
 
-export  const createKurs = async ( epost) => {
+export  const createKurs = async ( body ) => {
     try{
-        await client.create({_type: 'paamelding', ...epost});
+        await client.create({_type: 'paamelding', ...body});
         
     } catch (error) {
         throw new Error(error);
-
-
     }
 }
