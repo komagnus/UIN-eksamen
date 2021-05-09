@@ -10,6 +10,8 @@ import { getArticles } from '../utils/articleservice';
 import Extraposts from "../components/extraposts";
 import imageUrlBuilder from "@sanity/image-url";
 import ArtikkelNavHome from '../components/artikkelNavHome';
+import { getEndreDato } from '../utils/datoService';
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -20,6 +22,8 @@ const Home = () => {
     const [RelevantPostData, setRelevantPost] = useState(null);
     const [morePostData, setMorePostData] = useState([]);
     const [flexDirection, setFlexDirection] = useState(false);
+    const [EndreDato, setEndreDato] = useState([]);
+
 
 
     
@@ -31,6 +35,11 @@ const Home = () => {
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
     }
+    const GetEndreDato = async() => {
+        const data = await getEndreDato();
+        setEndreDato(data);
+    };
+ 
 
 
     useEffect(()=> {
@@ -51,9 +60,10 @@ const Home = () => {
         .catch(console.error);
     }, [] );
 
+
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && featured != true ][0..9] | order(publishedAt desc){
+        .fetch(`*[_type == "post" && featured != true ][0..9] {
             title,
             slug,
             ledetekst,
@@ -69,6 +79,9 @@ const Home = () => {
         .then((data) => setPost(data))
         .catch(console.error);
     }, [] );
+
+
+
     return (
         <>
         <Main>
@@ -106,9 +119,17 @@ const Home = () => {
                             </RelevantArticlePreview>
                         </RelevantArticle>
                         ))}
+
                         <ButtonsWrapper>
                             <Button onClick={changeView}>Visning</Button>
                         </ButtonsWrapper>
+
+                        {EndreDato}
+                        <ButtonsWrapper>
+                        <Button onClick={GetEndreDato}>Endre dato</Button>
+                    </ButtonsWrapper>
+
+
                         <AllArticles style={{flexDirection:flexDirection}}>
                         {postData && postData.map((post, index) => (
                             <PreviewArticle key={"ArticlePreview" + post.slug.current}>
