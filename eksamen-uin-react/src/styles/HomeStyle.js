@@ -63,6 +63,7 @@ export const PreviewArticle = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @media (min-width: 1700px) {
         width: 28%;
     }
@@ -70,7 +71,7 @@ export const PreviewArticle = styled.article`
         width: 40%;
     }
     @media (max-width: 1300px) {
-        width:100%;
+        width:400px;
     }
 `;
 
