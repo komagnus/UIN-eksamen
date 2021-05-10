@@ -10,6 +10,7 @@ import { getArticles } from '../utils/articleservice';
 import Extraposts from "../components/extraposts";
 import imageUrlBuilder from "@sanity/image-url";
 import ArtikkelNavHome from '../components/artikkelNavHome';
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
@@ -22,6 +23,7 @@ const Home = () => {
     const [flexDirection, setFlexDirection] = useState(false);
 
 
+
     
 
     const GetMorePostData = async() => {
@@ -31,6 +33,7 @@ const Home = () => {
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
     }
+ 
 
 
     useEffect(()=> {
@@ -51,9 +54,10 @@ const Home = () => {
         .catch(console.error);
     }, [] );
 
+
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && featured != true ][0..9] | order(publishedAt desc){
+        .fetch(`*[_type == "post" && featured != true ][0..9] {
             title,
             slug,
             ledetekst,
@@ -69,6 +73,9 @@ const Home = () => {
         .then((data) => setPost(data))
         .catch(console.error);
     }, [] );
+
+
+
     return (
         <>
         <Main>
@@ -106,9 +113,11 @@ const Home = () => {
                             </RelevantArticlePreview>
                         </RelevantArticle>
                         ))}
+
                         <ButtonsWrapper>
                             <Button onClick={changeView}>Visning</Button>
                         </ButtonsWrapper>
+
                         <AllArticles style={{flexDirection:flexDirection}}>
                         {postData && postData.map((post, index) => (
                             <PreviewArticle key={"ArticlePreview" + post.slug.current}>

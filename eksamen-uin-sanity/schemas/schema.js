@@ -9,10 +9,9 @@ import footernavigasjon from './footernavigasjon';
 import gallery from './documents/gallery';
 import navigationListHeader from './navigationListHeader';
 import contact from './documents/contact';
-import contactimg from './documents/contactimg'
 import paamelding from './documents/paamelding';
 import kurs from './documents/kurs';
-import contactimg from './documents/contactimg';
+import contactimg from './documents/contacting';
 import subscribe from './documents/subscribe';
 
 export default createSchema({

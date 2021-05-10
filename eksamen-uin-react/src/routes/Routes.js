@@ -20,6 +20,7 @@ import FullKurs from '../components/kurs/FullKurs.js';
 
 
 
+
 const Routes = () => (
     <Router>
         <Switch>
@@ -80,7 +81,6 @@ const Routes = () => (
             <Route exact path="/kurs">
                 <Kurs /> 
             </Route>
-            
             <Route path="*">
                 <NoMatch />
             </Route>
