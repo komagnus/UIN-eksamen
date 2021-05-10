@@ -120,17 +120,3 @@ body {
       text-align: center;
       font-size: 10px;
     }
-    h3{
-      font-size: 1.5vw;
-    }
-    p{
-      font-size: 1vw;
-    }
-    @media (max-width: 768px){
-     h3{
-       font-size: 2vw;
-     }
-     p{
-      font-size: 1.5vw;
-    }
-      }
