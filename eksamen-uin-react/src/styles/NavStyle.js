@@ -30,3 +30,21 @@ export const NavContentItem = styled.li`
         background-color: #393e46,
     }
 `;
+export const FilterNav = styled.nav`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1vw;
+    height: 2vw;
+    align-items: center;
+    border-bottom: 1px solid #fed049;
+    & > li {
+        list-style-type: none;
+        color: white;
+        &:hover {
+        text-decoration: underline 1px solid white;
+        cursor: pointer;
+    }
+    }
+   
+`;
