@@ -26,7 +26,6 @@ const Home = () => {
     const [RelevantPostData, setRelevantPost] = useState(null);
     const [morePostData, setMorePostData] = useState([]);
     const [flexDirection, setFlexDirection] = useState(false);
-    const [display, setDisplay] = useState(false);
 
 
 
@@ -39,6 +38,8 @@ const Home = () => {
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
     }
+    const [display, setDisplay] = useState(false);
+
 
 
     useEffect(()=> {
@@ -59,9 +60,10 @@ const Home = () => {
         .catch(console.error);
     }, [] );
 
+
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && featured != true ][0..9] | order(publishedAt desc){
+        .fetch(`*[_type == "post" && featured != true ][0..9] {
             title,
             slug,
             ledetekst,
@@ -78,33 +80,37 @@ const Home = () => {
         .catch(console.error);
     }, [] );
 
+
     const HandleAll = () => {
-            if (display === "Helse") {
-                return ( <Helse/>);
-            } else if (display === "Inspirasjon") {
-                return (<Inspirasjon/>);
-            } else if (display === "Nyheter") {
-                return(<Nyheter/>);
-            } else if (display === "Profflag") {
-                return(<Profflag/>); 
-            } else if (display === "Tipsogtriks") {
-                return(<TipsOgTriks/>)
-            } else if (display === "Tutorials") {
-                return(<Tutorials/>)
-            } else {
-                return(<Alldisplayed/>)
-            }
-     }
-    
-    
-    const setAlle = () => setDisplay([])
-    const setHelse = () => setDisplay("Helse");
-    const setInspirasjon = () => setDisplay("Inspirasjon");
-    const setNyheter = () => setDisplay("Nyheter");
-    const setProfflag = () => setDisplay("Profflag");
-    const setTipsogTriks = () => setDisplay("Tipsogtriks");
-    const setTutorials = () => setDisplay("Tutorials");
-    
+        if (display === "Helse") {
+            return ( <Helse/>);
+        } else if (display === "Inspirasjon") {
+            return (<Inspirasjon/>);
+        } else if (display === "Nyheter") {
+            return(<Nyheter/>);
+        } else if (display === "Profflag") {
+            return(<Profflag/>); 
+        } else if (display === "Tipsogtriks") {
+            return(<TipsOgTriks/>)
+        } else if (display === "Tutorials") {
+            return(<Tutorials/>)
+        } else {
+            return(<Alldisplayed/>)
+        }
+}
+
+
+const setAlle = () => setDisplay([])
+const setHelse = () => setDisplay("Helse");
+const setInspirasjon = () => setDisplay("Inspirasjon");
+const setNyheter = () => setDisplay("Nyheter");
+const setProfflag = () => setDisplay("Profflag");
+const setTipsogTriks = () => setDisplay("Tipsogtriks");
+const setTutorials = () => setDisplay("Tutorials");
+
+
+
+
 
      const Alldisplayed = () => {
          return (
@@ -164,7 +170,7 @@ const Home = () => {
             <AllContent>
                     <Header/>
                     <NavFilter/>
-                    <ArticleContent >
+                    <ArticleContent>
                         {RelevantPostData && RelevantPostData.map((post, index) => (
                         <RelevantArticle key="RelevantArticle">
                             <RelevantArticlePreview>

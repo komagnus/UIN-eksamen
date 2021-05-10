@@ -33,7 +33,7 @@
     width: fit-content;
     text-align: center;
     text-decoration: underline;
-    margin-left: 25%;
+
 }
 #second {
     display: none;
@@ -63,4 +63,7 @@
 .artikkeltype {
     height: fit-content;
     padding: 3%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
 }

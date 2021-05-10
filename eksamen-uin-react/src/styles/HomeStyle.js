@@ -72,7 +72,7 @@ export const PreviewArticle = styled.article`
         width: 40%;
     }
     @media (max-width: 1300px) {
-        width:100%;
+        width:400px;
     }
 `;
 
