@@ -5,8 +5,6 @@ import Contact from '../pages/Contact.js';
 import Galleri from '../pages/Galleri.js';
 import About from '../pages/About.js';
 import SinglePost from '../pages/SinglePost.js';
-
-
 import NavigasjonAlle from '../components/artikkelpages/NavigasjonAlle.js';
 import NavigasjonHelse from '../components/artikkelpages/NavigasjonHelse.js';
 import NavigasjonInspirasjon from '../components/artikkelpages/NavigasjonInspirasjon.js';

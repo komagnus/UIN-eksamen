@@ -48,6 +48,7 @@ export const AllArticles = styled.article`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 `;
 export const EkstraArticles = styled.article `
     color: #eeeeee;
@@ -63,6 +64,7 @@ export const PreviewArticle = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 500px;
     @media (min-width: 1700px) {
         width: 28%;
     }
