@@ -108,6 +108,10 @@ const Home = () => {
 
      const Alldisplayed = () => {
          return (
+             <>
+             <ButtonsWrapper>
+                <Button onClick={changeView}>Visning</Button>
+            </ButtonsWrapper>
             <AllArticles style={{flexDirection:flexDirection}}>
             {postData && postData.map((post, index) => (
                 <PreviewArticle key={"ArticlePreview" + post.slug.current}>
@@ -135,6 +139,10 @@ const Home = () => {
             ))}
             {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} key ={post.slug + "Wrapper"}/>) : null}
             </AllArticles>
+            <ButtonsWrapper>
+                <MoreButton onClick={GetMorePostData}>Flere Artikler</MoreButton>
+            </ButtonsWrapper>
+            </>
          )
      } 
     const NavFilter= () => {
@@ -187,13 +195,8 @@ const Home = () => {
                             </RelevantArticlePreview>
                         </RelevantArticle>
                         ))}
-                        <ButtonsWrapper>
-                            <Button onClick={changeView}>Visning</Button>
-                        </ButtonsWrapper>
+                        
                          <HandleAll/>
-                        <ButtonsWrapper>
-                            <MoreButton onClick={GetMorePostData} >Flere Artikler</MoreButton>
-                        </ButtonsWrapper>
                     </ArticleContent>
                     <Footer/>
             </AllContent>

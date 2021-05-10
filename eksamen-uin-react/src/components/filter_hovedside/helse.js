@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import sanityClient from "../../utils/client.js";
 import '../../styles/Artikkelside.css';
 import imageUrlBuilder from "@sanity/image-url";
-import { AllArticles,  PreviewArticle,TittelWrapper,} from "../../styles/HomeStyle";
+import { AllArticles,  Button,  ButtonsWrapper,  PreviewArticle,TittelWrapper,} from "../../styles/HomeStyle";
 const builder = imageUrlBuilder(sanityClient);
 
 function urlFor(source) {
@@ -12,6 +12,11 @@ function urlFor(source) {
 
 export const Helse = () => {
     const [typeData, setType] = useState(null);
+    const [flexDirection, setFlexDirection] = useState(false);
+
+    const changeView = () => {
+        setFlexDirection(!flexDirection ? 'column' : 'row');
+    }
 
     useEffect(() => {
         sanityClient
@@ -31,11 +36,15 @@ export const Helse = () => {
         .then((data) => setType(data))
         .catch(console.error);
     }, [] );
-   
+    
 
     
     return (
-        <AllArticles>
+        <>
+        <ButtonsWrapper>
+                <Button onClick={changeView}>Visning</Button>
+        </ButtonsWrapper>
+        <AllArticles style={{flexDirection:flexDirection}}>
 
         {typeData && typeData.map((post, index) => (
 
@@ -65,7 +74,7 @@ export const Helse = () => {
                     ))}
 
         </AllArticles>
-        
+        </>
     )
 }
 
