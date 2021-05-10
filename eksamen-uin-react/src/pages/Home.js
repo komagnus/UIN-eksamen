@@ -10,7 +10,6 @@ import { getArticles } from '../utils/articleservice';
 import Extraposts from "../components/extraposts";
 import imageUrlBuilder from "@sanity/image-url";
 import ArtikkelNavHome from '../components/artikkelNavHome';
-import { getEndreDato } from '../utils/datoService';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -22,7 +21,6 @@ const Home = () => {
     const [RelevantPostData, setRelevantPost] = useState(null);
     const [morePostData, setMorePostData] = useState([]);
     const [flexDirection, setFlexDirection] = useState(false);
-    const [EndreDato, setEndreDato] = useState([]);
 
 
 
@@ -35,10 +33,6 @@ const Home = () => {
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
     }
-    const GetEndreDato = async() => {
-        const data = await getEndreDato();
-        setEndreDato(data);
-    };
  
 
 
@@ -123,12 +117,6 @@ const Home = () => {
                         <ButtonsWrapper>
                             <Button onClick={changeView}>Visning</Button>
                         </ButtonsWrapper>
-
-                        {EndreDato}
-                        <ButtonsWrapper>
-                        <Button onClick={GetEndreDato}>Endre dato</Button>
-                    </ButtonsWrapper>
-
 
                         <AllArticles style={{flexDirection:flexDirection}}>
                         {postData && postData.map((post, index) => (

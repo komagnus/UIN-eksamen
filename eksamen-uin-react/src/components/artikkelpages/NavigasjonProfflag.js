@@ -55,7 +55,7 @@ export default function Post() {
         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
         <span
             key={index} >
-            <img style={{height: "250px"}}
+            <img
             src={urlFor(post.mainImage.asset.url).format('webp').url()} 
             alt={post.mainImage.alt} 
             />
