@@ -78,6 +78,7 @@ useEffect(() => {
             </>
         )
     } 
+    
     const PrisSatt = () => {
         return (
             <>
