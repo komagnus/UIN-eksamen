@@ -11,7 +11,7 @@ import navigationListHeader from './navigationListHeader';
 import contact from './documents/contact';
 import paamelding from './documents/paamelding';
 import kurs from './documents/kurs';
-import contactimg from './documents/contacting';
+import contactimg from './documents/contactimg';
 import subscribe from './documents/subscribe';
 
 export default createSchema({
