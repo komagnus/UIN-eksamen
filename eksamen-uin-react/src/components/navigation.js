@@ -24,27 +24,22 @@ export default function Navigation() {
 
         <NavStyle key={'navstyle'}>
         {navigationListData && navigationListData.map((navigationList, index) => (                  
-
             <NavContent key={'nav1ContentItem'}>
                 <NavContentItem key={'nav1ContentItem'}>
                     <NavLink to="/NavigasjonAlle" activeClassName="active" key={"navlink1"} >{navigationList.navigationname1}</NavLink> 
                 </NavContentItem>
-
                 <NavContentItem key={'nav2ContentItem'}>
                 <NavLink to="/omOss" activeClassName="active" key={"navlink2"} >{navigationList.navigationname2}</NavLink> 
                </NavContentItem>
-
                 <NavContentItem key={'nav3ContentItem'}>
                     <NavLink to="/kontakt" activeClassName="active" key={"navlink3"} >{navigationList.navigationname3}</NavLink> 
                 </NavContentItem>
-
                 <NavContentItem key={'nav4ContentItem'}>
                     <NavLink to="/galleri" activeClassName="active" key={"navlink4"} >{navigationList.navigationname4}</NavLink> 
                 </NavContentItem> 
                 <NavContentItem key={'nav5ContentItem'}>
                     <NavLink to="/kurs" activeClassName="active" key={"navlink5"}>{navigationList.navigationname5}</NavLink>
-                </NavContentItem>
-                       
+                </NavContentItem>       
            </NavContent>
            ))}
         </NavStyle>

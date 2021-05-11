@@ -93,7 +93,6 @@ body {
     
     .ledetekst {
       text-align: center;
-      font-size: 20px;
       }
     
     .forfatterbilde {
@@ -110,10 +109,11 @@ body {
     text-align: center;
     }
     
-    .malinformasjon {
+    .malinformasjon, a {
     max-width: 540px;
     padding-bottom: 40px;
     margin: auto;
+    color: white;
     }
     
     .publiseringsdato {

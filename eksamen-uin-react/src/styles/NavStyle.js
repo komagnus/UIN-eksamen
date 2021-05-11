@@ -46,5 +46,8 @@ export const FilterNav = styled.nav`
         cursor: pointer;
     }
     }
-   
+    @media (max-width: 1000px){
+        height: 4vw;
+        font-size:2vw;
+    }
 `;

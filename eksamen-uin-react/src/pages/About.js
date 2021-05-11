@@ -41,50 +41,44 @@ export default function About() {
 
 
     return (
-
         <Main>
           <AllContent>
                 <Header/>
                     <BossContent>
-                    {bossData && bossData.map((author, index) => (                  
-                        <div className="hoved" key={author.name}> 
-                            <img src={urlFor(author.authorImage).format('webp').url()} alt={author.name}
-                            style={{height: "250px", width: "250px"}} key={author.authorImage}/>
+                        {bossData && bossData.map((author, index) => (                  
+                            <div className="hoved" key={author.name}> 
+                                <img src={urlFor(author.authorImage).format('webp').url()} alt={author.name}
+                                style={{height: "250px", width: "250px"}} key={author.authorImage}/>
 
-                            
-                            <div>
-                                <h1> {author.name} </h1>
-                                <h2>{author.rolle}</h2>
+                                
                                 <div>
-                                <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
+                                    <h1> {author.name} </h1>
+                                    <h2>{author.rolle}</h2>
+                                    <div>
+                                    <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         ))}
                     </BossContent>
                     <AboutContent>
                         {authorData && authorData.map((author, index) => (                  
-                        <div className="hoved" key={author.name}> 
-
-                        <img src={urlFor(author.authorImage).format('webp').url()} alt={author.name}
-                        style={{height: "250px", width: "250px"}} key={author.authorImage}/>
-
-                        <div>
-
-                        <h1> {author.name} </h1>
-                        <h2> {author.rolle}</h2>
-         
-        
-                        <div>
-                        <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
-                        </div>
-                        </div>
-
-                        </div>
-                        ))}
-                        </AboutContent>
-                    <Footer/>
+                            <div className="hoved" key={author.name}> 
+                                <img src={urlFor(author.authorImage).format('webp').url()} alt={author.name}
+                                style={{height: "250px", width: "250px"}} key={author.authorImage}
+                                />
+                                <div>
+                                    <h1> {author.name} </h1>
+                                    <h2> {author.rolle}</h2>
+                                    <div>
+                                        <BlockContent blocks={author.bio} projectId="kggawxgp" dataset="production" />
+                                    </div>
+                                </div>
+                            </div>
+                            ))}
+                    </AboutContent>
+                <Footer/>
             </AllContent>  
         </Main>
-);
-    }
+    );
+}

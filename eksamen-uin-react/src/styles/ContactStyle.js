@@ -7,12 +7,11 @@ export const KontaktossSide = styled.section`
     grid-row-gap: 30px;
 `;
 export const KontaktossWrapper = styled.section`
-    { grid-area: 1 / 1 / 2 / 6; }
+    grid-area: 1 / 1 / 2 / 6; 
     display: flex;
     justify-content: center;
     justify-content:space-around;
     padding-top:30px;
-    }
 `;
 export const Kontaktinfocontent = styled.section`
     display: flex;
@@ -38,7 +37,7 @@ export const KontaktRingoss = styled.section`
     justify-content: center;
     justify-content:space-around;
     border: 2px solid #FFFFFF	;
-    width 50%;
+    width: 50%;
     & > img {
         width: 45%;
         height: 80%;
@@ -51,17 +50,16 @@ export const KontaktRingoss = styled.section`
 
 
 export const KontaktossSkjemaWrapper = styled.section`
-    { grid-area: 2 / 1 / 5 / 6; }
+    grid-area: 2 / 1 / 5 / 6; 
     display:flex;
     justify-content: center;
-    }
 `;
 export const KontaktossSkjema = styled.section`
     display: flex;
     color: white;
     flex-direction: column;
-    align-items:center;
-    width 80%; 
+    align-items: center;
+    width: 80%; 
     border: 2px solid #FFFFFF	;
     & > h1 {
         font-size: 1vw;
@@ -76,15 +74,12 @@ export const KontaktossSkjema = styled.section`
         height: 30%;
         width:50%;
     }
-    }
 `;
 export const KontaktossNyhetsbrevWrapper = styled.section`
-    { grid-area: 5 / 1 / 6 / 6; }
+    grid-area: 5 / 1 / 6 / 6; 
     display:flex;
     justify-content: center;
-    padding-bottom:30px;
-    }
-}
+    padding-bottom: 30px;
 `;
 export const KontaktossNyhetsbrev = styled.section`
     display:flex;
@@ -93,31 +88,28 @@ export const KontaktossNyhetsbrev = styled.section`
     justify-content: space-between;
     align-items:center;
     width: 80%;
-    border: 2px solid #FFFFFF	;
-    }
+    border: 2px solid #FFFFFF;
     & > h1 {
         font-size: 1vw;
         color: #FFFFFF
     }
     & > input{
         height: 30%;
-        width:20%;
+        width: 20%;
     }
 `;
 export const TipsSkjema = styled.section`
-display:flex;
-flex-direction: column;
-justify-content: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 export const Abonner = styled.section`
-display:flex;
-color:white;
-width: 100%;
-flex-direction: row;
-justify-content: space-around;
-& > .subform {
     display:flex;
-    
-}
-
+    color:white;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    & > .subform {
+        display:flex;
+    }
 `;

@@ -3,11 +3,10 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blockContent from './documents/blockContent';
 import post from './documents/post';
 import author from './documents/author';
-import navigationList from './navigationList';
-import footerkontakt from './footerkontakt';
-import footernavigasjon from './footernavigasjon';
+import navigationList from './documents/navigationList';
+import footerkontakt from './documents/footerkontakt';
 import gallery from './documents/gallery';
-import navigationListHeader from './navigationListHeader';
+import navigationListHeader from './documents/navigationListHeader';
 import contact from './documents/contact';
 import paamelding from './documents/paamelding';
 import kurs from './documents/kurs';
@@ -22,7 +21,6 @@ export default createSchema({
     blockContent,
     navigationList,
     footerkontakt,
-    footernavigasjon,
     gallery,
     navigationListHeader,
     contact,

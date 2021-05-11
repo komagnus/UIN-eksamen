@@ -76,12 +76,15 @@ const Routes = () => (
             <Route exact path="/NavigasjonTutorials">
             <NavigasjonTutorials />
             </Route>
+
             <Route exact path="/kurs">
                 <Kurs /> 
             </Route>
+
             <Route path="*">
                 <NoMatch />
             </Route>
+            
         </Switch>
     </Router>
 );

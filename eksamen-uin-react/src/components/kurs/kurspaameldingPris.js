@@ -19,39 +19,39 @@ const KursPrisSkjema = ({ loading, onSubmit, title }) => {
                     <p id="title" value={title} required>{title}</p>
                 <label htmlFor="epost">
                     Epost:
-                    </label>
-                        <input 
+                </label>
+                    <input 
                         id="epost"
                         onChange={(event)=> setEpost(event.target.value)} 
                         value={epost}
-                        type="text" 
+                        type="email" 
                         placeholder="Skriv inn din epost for å melde deg på kurset" 
                         required>
-                        </input>
+                    </input>
                 <label htmlFor="name">
                     Navn:
-                    </label>
-                        <input 
+                </label>
+                    <input 
                         id="name"
                         onChange={(event)=> setName(event.target.value)} 
                         value={name}
                         type="text" 
                         placeholder="Skriv inn fullt navn for å melde deg på kurset" 
                         required>
-                        </input>
+                    </input>
                 <label htmlFor="tlf">
                     Telefonnummer:
-                    </label>
+                </label>
                     <input 
-                    id="tlf"
-                    onChange={(event)=> setTlf(event.target.value)} 
-                    value={tlf}
-                    type="text" 
-                    placeholder="Skriv inn ditt telefonnummer for å melde deg på kurset" 
-                    required>
+                        id="tlf"
+                        onChange={(event)=> setTlf(event.target.value)} 
+                        value={tlf}
+                        type="number" 
+                        placeholder="Skriv inn ditt telefonnummer for å melde deg på kurset" 
+                        required>
                     </input>
                 <button type="submit">{loading ? 'Sender...' : 'Send'}</button>
-                </KursformStyle >
+            </KursformStyle >
         </form>
     )
 }

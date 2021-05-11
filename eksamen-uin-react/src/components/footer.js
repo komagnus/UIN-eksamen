@@ -36,12 +36,12 @@ export default function Footer() {
 
 
     useEffect(() => {
-        sanityClient.fetch(`*[_type == "footernavigasjon"]{
-        navigasjon1,
-        navigasjon2,
-        navigasjon3,
-        navigasjon4,
-        navigasjon5,
+        sanityClient.fetch(`*[_type == "navigationList"]{
+            navigationname1,
+            navigationname2,
+            navigationname3,
+            navigationname4,
+            navigationname5,
         }`
         )
         .then((data) => setFooternavigasjon(data))
@@ -50,9 +50,7 @@ export default function Footer() {
 
 
     return (
-        
         <FooterContent key={'footercontent'}>
-
             <FooterAdresse key={'footeradresse'}>
                 {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
                 <FooterChild key={'footerchild1'}>
@@ -62,7 +60,6 @@ export default function Footer() {
                 </FooterChild>
                     ))}
             </FooterAdresse>
-
             <FooterWrapper key={'footerwrapper'}>
                 <FooterAnsatte key={'footeransatte'}>
                     {footeransattData && footeransattData.map((footeransatt, index) => (     
@@ -73,12 +70,13 @@ export default function Footer() {
                 </FooterAnsatte>
                 <FooterNav key={'footernav'}>
                     {footernavigasjonData && footernavigasjonData.map((footernavigasjon, index) => (     
-                    <FooterChild key={'footerchild3'}>
-                    <li key={'nav1'} ><NavLink to="" activeClassName="active" >{footernavigasjon.navigasjon1}</NavLink> </li>
-                    <li key={'nav2'}><NavLink to="/kontakt" activeClassName="active" >{footernavigasjon.navigasjon2 }</NavLink> </li>
-                    <li key={'nav3'}><NavLink to="/OmOss" activeClassName="active" >{footernavigasjon.navigasjon3}</NavLink> </li>
-                    <li key={'nav4'}><NavLink to="/galleri" activeClassName="active" >{footernavigasjon.navigasjon4}</NavLink></li>
-                    </FooterChild>
+                        <FooterChild key={'footerchild3'}>
+                            <li key={'nav1'} ><NavLink to="" activeClassName="active" >{footernavigasjon.navigationname1}</NavLink> </li>
+                            <li key={'nav2'}><NavLink to="/OmOss" activeClassName="active" >{footernavigasjon.navigationname2 }</NavLink> </li>
+                            <li key={'nav3'}><NavLink to="/kontakt" activeClassName="active" >{footernavigasjon.navigationname3}</NavLink> </li>
+                            <li key={'nav4'}><NavLink to="/galleri" activeClassName="active" >{footernavigasjon.navigationname4}</NavLink></li>
+                            <li key={'nav5'}><NavLink to="/kurs" activeClassName="active" >{footernavigasjon.navigationname5}</NavLink></li>
+                        </FooterChild>
                     ))}
                 </FooterNav>
             </FooterWrapper>

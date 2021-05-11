@@ -27,24 +27,13 @@ export default function Galleri() {
         <>
         <Main>
             <AllContent>
-
                     <Header/>
                     <GalleryContent>
-                    
-                    <h1>Galleri</h1>
-                    <div className="hoved" >
-                    {galleryData && galleryData.map((gallery, index) => (    
-                                     
-                        
-
-                        <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse} key={gallery.beskrivelse}/>
-
-                        
-
-                        
-                        
-                        
-                        ))}
+                        <h1>Galleri</h1>
+                        <div className="hoved" >
+                            {galleryData && galleryData.map((gallery, index) => (    
+                                <img src={urlFor(gallery.galleryImage).format('webp').url()} alt={gallery.beskrivelse} key={gallery.beskrivelse}/>
+                            ))}
                         </div>
                     </GalleryContent>
                     <Footer/>

@@ -88,25 +88,18 @@ const Contact = () => {
                     <KontaktossSide>
                         <KontaktossWrapper>
                             <Kontaktinfocontent>
-                            {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
-                <div key={index}>
-                    <li key={index + 'adresse'} >{footerkontakt.adresse} </li>
-                    <li key={index + 'tlf'}>{footerkontakt.tipstelefon}</li>
-                    <li key={index + 'epost'}>{footerkontakt.epost}</li>
-                </div>
-                    ))}cd 
+                                {footerkontaktData && footerkontaktData.map((footerkontakt, index) => (     
+                                    <div key={index}>
+                                        <li key={index + 'adresse'} >{footerkontakt.adresse} </li>
+                                        <li key={index + 'tlf'}>{footerkontakt.tipstelefon}</li>
+                                        <li key={index + 'epost'}>{footerkontakt.epost}</li>
+                                    </div>
+                                ))} 
                             </Kontaktinfocontent>
                             <KontaktRingoss>
-                            
-                            {imgData && imgData.map((image, index) => (    
-                                     
-                                    
-
-                                     <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={index}/>
-                                     
-                                     
-                                     ))}
-                                     
+                                {imgData && imgData.map((image, index) => (    
+                                    <img src={urlFor(image.contactimgImage).format('webp').url()} alt="kontaktoss" key={index}/>
+                                ))}
                             </KontaktRingoss>
                         </KontaktossWrapper>
                         <KontaktossSkjemaWrapper>
@@ -115,12 +108,10 @@ const Contact = () => {
                                 <ContactForm loading={loading} onSubmit={onSubmit}/>
                                 {error ? <p>{error}</p> : null}
                                 {success ? <p>Din melding er sendt!</p> : null}
-                                
                             </KontaktossSkjema>
                         </KontaktossSkjemaWrapper>
                         <KontaktossNyhetsbrevWrapper>
                             <KontaktossNyhetsbrev>
-                                
                                 <Subscribe loading={loading2} onSubmit={onSubscribe}/>
                                 {error2 ? <p>{error2}</p> : null}
                                 {success2 ? <p>Du abonnerer!</p> : null}

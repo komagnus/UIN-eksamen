@@ -47,10 +47,7 @@ useEffect(() => {
         }, [slug]);
         
         if (!singlePost) return <div>Loading...</div>;
-        
-        
-        
-        
+
 
     return (
         <>
@@ -59,68 +56,43 @@ useEffect(() => {
                     <Header/>
                     <section> 
                         <main className="hovedsiden">
-
-
-
-                        
-                        <Artikkelnavigasjon />
-
-
-                        <article>
-                        <header>
-                        <div >
-                        <div>
-
-                        <Link className="typeartikkel" to={"/navigasjon" + singlePost.typeartikkel}>
-                        {singlePost.typeartikkel}
-                        </Link>
-
-
-                            <img className="hovedbilde" src={singlePost.mainImage.asset.url}
-                            alt={singlePost.title}/>
-
-
-                            
-                            <h1 className="overskrift">
-                            {singlePost.title}
-                            </h1>
-
-                            <h2 className="ledetekst">
-                            {singlePost.ledetekst}
-                            </h2>
-
-
-                            <div> 
-                            <img className="forfatterbilde"  
-                            src={urlFor(singlePost.authorImage).url()}
-                            alt={singlePost.name} />
-                            </div>
-                                
-                            <p className="forfatternavn">
-                            {singlePost.name} 
-                            </p>
-
-                            <p className="publiseringsdato">
-                            {singlePost.publishedAt}
-                            </p>
-
-                            </div>
-                            </div>
-
-
-                            </header>
-
-                            <div className="malinformasjon"
-                            style={{ }}>
-
-
-                            <BlockContent 
-                            blocks={singlePost.body} 
-                            projectId="vlt4cikf" 
-                            dataset="production" />
-                                
-                            </div>
-                            </article>
+                            <Artikkelnavigasjon />
+                                <article>
+                                    <header>
+                                        <div>
+                                            <div>
+                                                <Link className="typeartikkel" to={"/navigasjon" + singlePost.typeartikkel}>
+                                                    {singlePost.typeartikkel}
+                                                </Link>
+                                                <img className="hovedbilde" src={urlFor(singlePost.mainImage.asset.url).format('webp').url()} alt={singlePost.title}/>
+                                                <h1 className="overskrift">
+                                                    {singlePost.title}
+                                                </h1>
+                                                <p className="ledetekst">
+                                                    {singlePost.ledetekst}
+                                                </p>
+                                                <div> 
+                                                    <img className="forfatterbilde"  
+                                                    src={urlFor(singlePost.authorImage).format('webp').url()}
+                                                    alt={singlePost.name} />
+                                                </div> 
+                                                <p className="forfatternavn">
+                                                    {singlePost.name} 
+                                                </p>
+                                                <p className="publiseringsdato">
+                                                    {singlePost.publishedAt}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div className="malinformasjon">
+                                        <BlockContent 
+                                            blocks={singlePost.body} 
+                                            projectId="vlt4cikf" 
+                                            dataset="production" 
+                                        />                               
+                                    </div>
+                                </article>
                             </main>
                     </section>
                     <Footer/>

@@ -37,6 +37,7 @@ const Home = () => {
     }
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
+
     }
     const [display, setDisplay] = useState(false);
 
@@ -63,7 +64,7 @@ const Home = () => {
 
     useEffect(() => {
         sanityClient
-        .fetch(`*[_type == "post" && featured != true ][0..9] {
+        .fetch(`*[_type == "post" && featured != true ][0..9] | order(_createdAt desc) {
             title,
             slug,
             ledetekst,
@@ -99,18 +100,13 @@ const Home = () => {
         }
 }
 
-
-const setAlle = () => setDisplay([])
-const setHelse = () => setDisplay("Helse");
-const setInspirasjon = () => setDisplay("Inspirasjon");
-const setNyheter = () => setDisplay("Nyheter");
-const setProfflag = () => setDisplay("Profflag");
-const setTipsogTriks = () => setDisplay("Tipsogtriks");
-const setTutorials = () => setDisplay("Tutorials");
-
-
-
-
+    const setAlle = () => setDisplay([])
+    const setHelse = () => setDisplay("Helse");
+    const setInspirasjon = () => setDisplay("Inspirasjon");
+    const setNyheter = () => setDisplay("Nyheter");
+    const setProfflag = () => setDisplay("Profflag");
+    const setTipsogTriks = () => setDisplay("Tipsogtriks");
+    const setTutorials = () => setDisplay("Tutorials");
 
      const Alldisplayed = () => {
          return (
@@ -119,38 +115,38 @@ const setTutorials = () => setDisplay("Tutorials");
                 <Button onClick={changeView}>Visning</Button>
             </ButtonsWrapper>
             <AllArticles style={{flexDirection:flexDirection}}>
-            {postData && postData.map((post, index) => (
-                <PreviewArticle key={"ArticlePreview" + post.slug.current}>
-                    <Link to={"/post/" + post.slug.current} key={post.slug.current + 'home'}>
-                        <span  
-                            key={index + 'home'} >
-                            <img style={{height: "200px", width: "300px"}}
-                            src={urlFor(post.mainImage.asset.url).format('webp').url()}
-                            alt={post.mainImage.alt}
-                            />
-                        </span>
-                    </Link>
-                    <TittelWrapper>
-                        <h3>{post.title}</h3>
-                        <Link className="artikkeltype" to={"/navigasjon" + post.typeartikkel} >
-                            {post.typeartikkel}
+                {postData && postData.map((post, index) => (
+                    <PreviewArticle key={"ArticlePreview" + post.slug.current}>
+                        <Link to={"/post/" + post.slug.current} key={post.slug.current + 'home'}>
+                            <span  
+                                key={index + 'home'} >
+                                <img style={{height: "200px", width: "300px"}}
+                                src={urlFor(post.mainImage.asset.url).format('webp').url()}
+                                alt={post.mainImage.alt}
+                                />
+                            </span>
                         </Link>
-                    </TittelWrapper>
-                    <p>
-                        {post.ledetekst}
-                    </p>
-                    
-                    <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
-                </PreviewArticle>
-            ))}
-            {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} key ={post.slug + "Wrapper"}/>) : null}
+                        <TittelWrapper>
+                            <h3>{post.title}</h3>
+                            <Link className="artikkeltype" to={"/navigasjon" + post.typeartikkel} >
+                                {post.typeartikkel}
+                            </Link>
+                        </TittelWrapper>
+                        <p>
+                            {post.ledetekst}
+                        </p>
+                        <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
+                    </PreviewArticle>
+                ))}
+                {morePostData?.length > 0 ? morePostData.map(post =>  <Extraposts title={post.title} mainImage={post.mainImage} typeartikkel={post.typeartikkel} ledetekst={post.ledetekst} slug={post.slug} key ={post.slug + "Wrapper"}/>) : null}
             </AllArticles>
             <ButtonsWrapper>
                 <MoreButton onClick={GetMorePostData}>Flere Artikler</MoreButton>
             </ButtonsWrapper>
             </>
          )
-     } 
+    }; 
+
     const NavFilter= () => {
         return (
         <FilterNav>
@@ -164,6 +160,9 @@ const setTutorials = () => setDisplay("Tutorials");
         </FilterNav>
         );
     }
+
+
+
     return (
         <>
         <Main>
@@ -172,7 +171,7 @@ const setTutorials = () => setDisplay("Tutorials");
                     <NavFilter/>
                     <ArticleContent>
                         {RelevantPostData && RelevantPostData.map((post, index) => (
-                        <RelevantArticle key="RelevantArticle">
+                        <RelevantArticle key= { index + "RelevantArticle"}>
                             <RelevantArticlePreview>
                                 <RelevantImgPreview>
                                     <Link to={"/post/" + post.slug.current} key={post.slug.current}>
@@ -201,7 +200,6 @@ const setTutorials = () => setDisplay("Tutorials");
                             </RelevantArticlePreview>
                         </RelevantArticle>
                         ))}
-                        
                          <HandleAll/>
                     </ArticleContent>
                     <Footer/>

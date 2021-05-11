@@ -13,7 +13,7 @@ const articleFields = `
         alt} 
 `;
 
-export const getArticles = async (end=12) => {
+export const getArticles = async (end=20) => {
     const data = await client.fetch(
       `*[_type == "post" && featured != true][10..$end]{${articleFields}}`,
       {end}

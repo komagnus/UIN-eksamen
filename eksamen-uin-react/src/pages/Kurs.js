@@ -12,7 +12,6 @@ function urlFor(source) {
 }
 
 const Kurs = () => {
-
     const [kursData, setKurs] = useState([]);
     useEffect(() => {
         sanityClient
@@ -39,29 +38,27 @@ const Kurs = () => {
             <AllContent>
                 <Header/>
                 <KursWrapper>
-                {kursData && kursData.map((kurs, index) => (
-                            <PreviewKurs key={"kursPreview" + kurs.slug.current}>
-                                <Link to={"/kurs/" + kurs.slug.current} key={kurs.slug.current + 'home'}>
-                                    <span  
-                                        key={index + 'home'} >
-                                        <img style={{height: "200px", width: "300px"}}
+                    {kursData && kursData.map((kurs, index) => (
+                        <PreviewKurs key={"kursPreview" + kurs.slug.current}>
+                            <Link to={"/kurs/" + kurs.slug.current} key={kurs.slug.current + 'home'}>
+                                <span key={index + 'home'} >
+                                    <img style={{height: "200px", width: "300px"}}
                                         src={urlFor(kurs.kursImage.asset.url).format('webp').url()}
                                         alt={kurs.kursImage.alt}
-                                        />
-                                    </span>
-                                </Link>
-                                <TittelWrapper>
-                                    <h3>{kurs.title}</h3>
-                                </TittelWrapper>
-                                <p>
-                                    {kurs.PreviewBeskrivelse}
-                                </p>
-                                <p><strong>Dato:</strong>{kurs.dato}</p>
-                                <p><strong>Pris:</strong> {kurs.pris}</p>
-                                
-                                <Link to={"/kurs/" + kurs.slug.current} key={kurs.slug.current}><p>Meld deg på her!</p></Link>
-                            </PreviewKurs>
-                        ))}
+                                    />
+                                </span>
+                            </Link>
+                            <TittelWrapper>
+                                <h3>{kurs.title}</h3>
+                            </TittelWrapper>
+                            <p>
+                                {kurs.PreviewBeskrivelse}
+                            </p>
+                            <p><strong>Dato:</strong>{kurs.dato}</p>
+                            <p><strong>Pris:</strong> {kurs.pris}</p> 
+                            <Link to={"/kurs/" + kurs.slug.current} key={kurs.slug.current}><p>Meld deg på her!</p></Link>
+                        </PreviewKurs>
+                    ))}
                 </KursWrapper>
                 <Footer/>
         </AllContent>

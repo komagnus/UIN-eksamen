@@ -5,7 +5,6 @@ import '../../styles/Artikkelside.css';
 import imageUrlBuilder from "@sanity/image-url";
 import { AllArticles,  Button,  ButtonsWrapper,  PreviewArticle,TittelWrapper,} from "../../styles/HomeStyle";
 const builder = imageUrlBuilder(sanityClient);
-
 function urlFor(source) {
     return builder.image(source)
 }
@@ -13,7 +12,6 @@ function urlFor(source) {
 export const Tutorials = () => {
     const [typeData, setType] = useState(null);
     const [flexDirection, setFlexDirection] = useState(false);
-
     const changeView = () => {
         setFlexDirection(!flexDirection ? 'column' : 'row');
     }
@@ -45,34 +43,29 @@ export const Tutorials = () => {
                 <Button onClick={changeView}>Visning</Button>
         </ButtonsWrapper>
         <AllArticles style={{flexDirection:flexDirection}}>
+            {typeData && typeData.map((post, index) => (
+                <PreviewArticle key={"ArticlePreview" + post.slug.current}>
+                    <Link to={"/post/" + post.slug.current} key={post.slug.current + 'home'}>
+                        <span  key={index + 'home'} >
+                            <img style={{height: "200px", width: "300px"}}
+                            src={urlFor(post.mainImage.asset.url).format('webp').url()}
+                            alt={post.mainImage.alt}
+                            />
+                        </span>
+                    </Link>
+                    <TittelWrapper>
+                        <h3>{post.title}</h3>
+                        <Link className="artikkeltype" to={"/navigasjon" + post.typeartikkel} >
+                            {post.typeartikkel}
+                        </Link>
+                    </TittelWrapper>
+                    <p>
+                        {post.ledetekst}
+                    </p>
 
-        {typeData && typeData.map((post, index) => (
-
-            <PreviewArticle key={"ArticlePreview" + post.slug.current}>
-            <Link to={"/post/" + post.slug.current} key={post.slug.current + 'home'}>
-                <span  
-                    key={index + 'home'} >
-                    <img style={{height: "200px", width: "300px"}}
-                    src={urlFor(post.mainImage.asset.url).format('webp').url()}
-                    alt={post.mainImage.alt}
-                    />
-                </span>
-            </Link>
-            <TittelWrapper>
-                <h3>{post.title}</h3>
-                <Link className="artikkeltype" to={"/navigasjon" + post.typeartikkel} >
-                    {post.typeartikkel}
-                </Link>
-            </TittelWrapper>
-            <p>
-                {post.ledetekst}
-            </p>
-
-            <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
-            </PreviewArticle>
-
-                    ))}
-
+                    <Link to={"/post/" + post.slug.current} key={post.slug.current}><p>Les mer</p></Link>
+                </PreviewArticle>
+            ))}
         </AllArticles>
         </>
     )
